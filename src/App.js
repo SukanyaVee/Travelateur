@@ -1,28 +1,31 @@
 import React, { Component } from 'react';
 import {Switch, Route, Link} from 'react-router-dom';
-// import background from './background.jpg';
+
 import './App.css';
+
+import Home from './components/Home'
+import Login from './components/Login'
 import Dashboard from './components/Dashboard';
-import AddJournal from './components/AddJournal';
-import AddPhoto from './components/AddPhoto'
+import AddEntry from './components/AddEntry';
+import UserEdit from './components/UserEdit';
+
 
 class App extends Component {
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <div className="App-title"><b>travel</b><em>ateur</em></div>
-          <div className="login-box">
-            <Link to='/dashboard' className="links">Login</Link>
-          </div>
-        </header>
-        <Switch>
-          <Route exact path='/dashboard' component="Dashboard"/>
-          <Route exact path='/addjournal' component="AddJournal"/>
-          <Route exact path='/addphoto' component="AddPhoto"/>
-        </Switch>
 
-        <div className="photo-header"></div>
+    return (
+      <div>
+        
+        <Switch>
+          <Route exact path="/" component={Home}/>
+          <Route path='/login' component={Login}/>
+          <Route exact path='/dashboard' component={Dashboard}/>
+          <Route path="/dashboard/useredit" component={UserEdit}/>
+          <Route exact path='/dashboard/addentry' component={AddEntry}/>
+          {/* <Route exact path='/dashboard/addphoto' component={AddPhoto}/> */}
+        </Switch> 
+
+       
       </div>
     );
   }

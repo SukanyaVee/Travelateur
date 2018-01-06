@@ -2,46 +2,86 @@ import React, { Component } from 'react';
 // import './App.css';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import icon from './user-icon.png'
+import AddEntry from './AddEntry'
 
 class Dashboard extends Component {
     constructor(props){
-        super();
+        super(props);
         this.state = {
-            firstName: this.props.firstName,
-            sampleJournals: [],
-            samplePhotos: []
+            // uid: this.props.uid,
+            // firstName: this.props.firstName,
+            user: {},
+            entries: []
             };
         };
         // bind functions
     
 
     componentDidMount(){
-        axios.get('http://localhost:3000/api/travelateur/photos').then(resp=>{
+        axios.get('http://localhost:3000/api/travelateur/user/:id').then(resp=>{
         this.setState({
-            samplePhotos: resp.data.photos
+            user: resp.data.user
         })
         }).catch(error=>console.log(error))
 
-        axios.get('http://localhost:3000/api/travelateur/photos').then(resp=>{
+        axios.get('http://localhost:3000/api/travelateur/entries').then(resp=>{
         this.setState({
-            sampleJournals: resp.data.journals
+            entries: resp.data.entries
            })
         }).catch(error=>console.log(error))
     }
 
+    displayPJHolder(){
+        this.state.entries.forEach(element => (element)=> {
+            if ( element.type === "photos")
+            {
+                return 
+                (<div className="pj-holder">
+                    {element.title}
+                    <div className="pj-body">
+                        <img src={element.image}/>
+                    </div>
+                    {element.location}, {element.year}
+                </div>)
+                
+            }
+            else if (element.type === "journals")
+            {
+                return 
+                    (<div className="pj-holder">
+                        {element.title}
+                        <div className="pj-body">
+                            {element.journal}
+                        </div>
+                        {element.location}, {element.year}
+                    </div>)
+            }
+        })
+
+    }
+
   render() {
+    
     return (
-        <div>
-            <header className="dash-header">
-                <div className="dash-title"><b>travel</b><em>ateur</em></div>
-                <div className="dash-user">{this.state.firstname}</div>
+        <div className="dashboard">
+            <header className="all-header">
+                <div className="all-title"><b>travel</b>ateur</div>
+                <div className="user-box">
+                <Link to='/dashboard/useredit'><img src={icon} width="30"/></Link>
+                </div> 
             </header>
-            <div>
-                <p className="dash-greeting">Hi {this.state.firstname}!</p>
-                <div className="add-box">
-                    <button className="add-button">Add a new journal</button>
-                    <button classname="addbutton">Add a new photo</button>
-                </div>
+            
+            <div className="dash-greeting">
+                Hi Sukanya{this.state.firstname}!
+                <Link to="/dashboard/addjournal"><button className="add-button">Add a new entry</button></Link>
+            </div>
+
+            
+    
+            <div className="gallery-container">
+            {this.displayPJHolder()}
+            Check 1,2,6
             </div>
         </div>
     );
