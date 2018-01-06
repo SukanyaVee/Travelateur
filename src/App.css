@@ -17,10 +17,6 @@
   min-width: 600px;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
 /* .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
@@ -34,15 +30,15 @@ img {
   height: 100px;
   padding: 50px;
   padding-top: 60px;
-  /* padding-bottom: 100px; */
+  padding-bottom: 60px;
   border-radius: 10px;
   color: white;
 }
 
 .App-title {
   text-align: left;
-  font-size: 6em;
-  font-family: 'Shadows Into Light Two', sans-serif;
+  font-size: 8em;
+  font-family: 'Economica', sans-serif;
 }
 /*
 .App-intro {
@@ -63,18 +59,9 @@ img {
   font-size: 2em;
   color: white;
 }
-.login-box>links:link {
-  color: white
-}
-.login-box>links:visited {
-  color: white
-}
-.login-box>links:active {
-  color: white
-}
 
-.photo-header {
-  margin-top: 50px;
+.photo-banner {
+  /* margin-top: 50px; */
   /* margin-bottom: 50px; */
   /* padding: 20px; */
   background-color: rgb(30, 30, 30);
@@ -84,13 +71,28 @@ img {
   background-size: cover;
   min-height: 200px;
   max-height: 500px;
+  z-index: 0;
+}
+
+.photo-banner>img {
+  max-width: 100%;
+  height: auto;
+  opacity: 0.5;
 }
 
 .text-over-image {
+  /* border: 1px black; */
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 50%; 
     transform: translate(-50%, -50%);
+  font-family: 'Economica', cursive;
+  font-size: 2em;
+  color: white;
+  text-shadow: 2px 2px grey;
+  text-align: center;
+  align-content: center;
+  z-index: 1;
 }
 
 .login-home-button {
@@ -129,7 +131,7 @@ img {
   justify-content: center;
 }
 
-.reg-button {
+.small-button {
   /* margin: 10px;   */
   background: #666666;
   /* background-image: -webkit-linear-gradient(top, #666666, #999999);
@@ -194,7 +196,7 @@ img {
 	align-items: center;
 }
 
-.add-button {
+.big-button {
   margin: 10px;
   background: #666666;
   background-image: -webkit-linear-gradient(top, #666666, #999999);
@@ -222,7 +224,7 @@ img {
   align-content: flex-start;
 }
 
-.pj-holder{
+.entry-holder{
   background-color: rgb(30, 30, 30);
   margin: 10px;
   padding: 10px;
@@ -230,7 +232,7 @@ img {
   color: white;
 }
 
-.pj-body {
+.entry-body {
   background-color: grey;
   font-family: Georgia, 'Times New Roman', serif;
   max-width: 100%;

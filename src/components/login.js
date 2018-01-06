@@ -32,8 +32,8 @@ class Login extends Component {
             
             <div className="login-container">
                 <div className="reg-container">
-                    <button class="reg-button" onClick={event=>{this.setState({registered: true})}}>Login</button>
-                    <button class="reg-button" onClick={event=>{this.setState({registered: false})}}>Register</button>
+                    <button class="small-button" onClick={event=>{this.setState({registered: true})}}>Login</button>
+                    <button class="small-button" onClick={event=>{this.setState({registered: false})}}>Register</button>
                 </div>
                 <br/><br/>
             {this.state.registered ?
@@ -41,7 +41,7 @@ class Login extends Component {
                 Username: <input onChange={event=>{this.setState({username: event.target.value})}}/><br/><br/>
                 Password: <input onChange={event=>{this.setState({password: event.target.value})}}/> <br/><br/>
                 <Link to="/dashboard">
-                    <button className="add-button" onClick={event=>{               } }>Submit</button>
+                    <button className="big-button" onClick={event=>{               } }>Submit</button>
                 </Link>
             </div>
             :
@@ -53,7 +53,7 @@ class Login extends Component {
                 Username: <input onChange={event=>{this.setState({username: event.target.value})}}/><br/><br/>
                 Password: <input onChange={event=>{this.setState({password: event.target.value})}}/> <br/><br/>
                 <Link to="/dashboard">
-                    <button className="add-button" onClick={event=>{               } }>Submit</button>
+                    <button className="big-button" onClick={event=>{               } }>Submit</button>
                 </Link>
             </div>
             }</div>

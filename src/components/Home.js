@@ -22,12 +22,17 @@ class Home extends Component {
         <header className="App-header">
           <div className="App-title"><b><b>travel</b></b>ateur</div>
           <div className="login-box">
+            <Link to='/login' className="links"><button className="login-home-button">Find Inspiration</button></Link>
             <Link to='/login' className="links"><button className="login-home-button">Login</button></Link>
           </div>
         </header>
-        <div className="photo-header">
+        
+        <div className="photo-banner">
+            {/* <div style='color:white'>
+          Photo blogging and journaling precious memories...
+          </div> */}
           <img src={pic2} alt="oh! the places you'll go!"/>
-          <div className="text-over-image">Photo blogging and journaling your precious memories</div>
+          <div className="text-over-image"></div>
           {/* {picArray.forEach(elem=><img src={elem} alt="oh! the places you'll go!"/>)} */}
         </div>
         <footer className="home-footer">

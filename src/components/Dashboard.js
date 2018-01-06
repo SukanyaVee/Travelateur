@@ -37,9 +37,9 @@ class Dashboard extends Component {
             if ( element.type === "photos")
             {
                 return 
-                (<div className="pj-holder">
+                (<div className="entry-holder">
                     {element.title}
-                    <div className="pj-body">
+                    <div className="entry-body">
                         <img src={element.image}/>
                     </div>
                     {element.location}, {element.year}
@@ -49,9 +49,9 @@ class Dashboard extends Component {
             else if (element.type === "journals")
             {
                 return 
-                    (<div className="pj-holder">
+                    (<div className="entry-holder">
                         {element.title}
-                        <div className="pj-body">
+                        <div className="entry-body">
                             {element.journal}
                         </div>
                         {element.location}, {element.year}
@@ -74,10 +74,9 @@ class Dashboard extends Component {
             
             <div className="dash-greeting">
                 Hi Sukanya{this.state.firstname}!
-                <Link to="/dashboard/addjournal"><button className="add-button">Add a new entry</button></Link>
+                <Link to="/dashboard/addjournal"><button className="big-button">Add a new photo</button></Link>
+                <Link to="/dashboard/addjournal"><button className="big-button">Add a new journal</button></Link>
             </div>
-
-            
     
             <div className="gallery-container">
             {this.displayPJHolder()}
