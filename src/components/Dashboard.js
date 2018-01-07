@@ -9,9 +9,8 @@ class Dashboard extends Component {
     constructor(props){
         super(props);
         this.state = {
-            // uid: this.props.uid,
-            // firstName: this.props.firstName,
-            user: {},
+            //DOES user info come from login/reg page during auth as props ^^ or get from user server vv
+            user: this.props.user,
             entries: []
             };
         };
@@ -19,46 +18,45 @@ class Dashboard extends Component {
     
 
     componentDidMount(){
-        axios.get('http://localhost:3000/api/travelateur/user/:id').then(resp=>{
-        this.setState({
-            user: resp.data.user
-        })
-        }).catch(error=>console.log(error))
+        // axios.get(`http://localhost:3000/api/travelateur/user/:${uid}`).then(resp=>{
+        // this.setState({
+        //     user: resp.data.user
+        // })
+        // }).catch(error=>console.log(error))
 
-        axios.get('http://localhost:3000/api/travelateur/entries').then(resp=>{
+        axios.get(`http://localhost:3000/api/travelateur/entries?userid=${this.props.user.id}`).then(resp=>{
         this.setState({
             entries: resp.data.entries
            })
         }).catch(error=>console.log(error))
     }
 
-    displayPJHolder(){
-        this.state.entries.forEach(element => (element)=> {
-            if ( element.type === "photos")
+    displayHolder(){
+        for (let i=this.state.entries.length;i>this.state.entries.length-9;i--)
+        {
+            if (this.state.entries[i].type === "photos")
             {
                 return 
                 (<div className="entry-holder">
-                    {element.title}
+                    {this.state.entries[i].title}
                     <div className="entry-body">
-                        <img src={element.image}/>
+                        <img src={this.state.entries[i].image}/>
                     </div>
-                    {element.location}, {element.year}
+                    {this.state.entries[i].location}, {this.state.entries[i].year}
                 </div>)
-                
             }
-            else if (element.type === "journals")
+            else if (this.state.entries[i].type === "journals")
             {
                 return 
                     (<div className="entry-holder">
-                        {element.title}
+                        {this.state.entries[i].title}
                         <div className="entry-body">
-                            {element.journal}
+                            {this.state.entries[i].journal.substring(0,100)}
                         </div>
-                        {element.location}, {element.year}
+                        {this.state.entries[i].location}, {this.state.entries[i].year}
                     </div>)
             }
-        })
-
+        }
     }
 
   render() {
@@ -74,12 +72,14 @@ class Dashboard extends Component {
             
             <div className="dash-greeting">
                 Hi Sukanya{this.state.firstname}!
-                <Link to="/dashboard/addjournal"><button className="big-button">Add a new photo</button></Link>
+            </div>
+            <div className="add-box">
+                <Link to="/dashboard/addjournal" ><button className="big-button">Add a new photo</button></Link>
                 <Link to="/dashboard/addjournal"><button className="big-button">Add a new journal</button></Link>
             </div>
     
             <div className="gallery-container">
-            {this.displayPJHolder()}
+            {this.displayHolder()}
             Check 1,2,6
             </div>
         </div>

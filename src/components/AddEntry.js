@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 // import './App.css';
 import {Link} from 'react-router-dom';
 
@@ -6,15 +7,20 @@ class AddEntry extends Component {
   constructor(props){
     super(props);
     this.state = {
-        type: this.props.type,
+        type: this.props.match.params.type.substring(10),
         title: '',
-        image: this.props.image,
-        journal: this.props.journal,
+        image: '',
+        journal: '',
         location: '',
         year: 0
     };
     // bind functions
 }
+
+componentDidMount(){
+    axios.get()
+}
+
 render() {
 
         if (this.state.type==="photo") {
