@@ -15,15 +15,16 @@ app.use(cors());
 const userAPIurl = '/api/travelateur/users'
 const entryAPIurl = '/api/travelateur/entries'
 
-app.get(userAPIurl, user.get);
-app.post(userAPIurl, user.post);
-app.put(`${userAPIurl}/:id`, user.update);
+app.get(`${userAPIurl}/:id`, user.get);
+app.post(userAPIurl, user.create);
+app.put(`${userAPIurl}/:id`, user.update);  
 app.delete(`${userAPIurl}/:id`, user.delete);
 
-app.get(photoAPIurl, entry.get);
-app.post(photoAPIurl, entry.post);
-app.put(`${photoAPIurl}/:id`, entry.update);
-app.delete(`${photoAPIurl}/:id`, entry.delete);
+app.get(`${photoAPIurl}?userid=:id`, entry.getAll);
+app.get(`${photoAPIurl}/:id`, entry.getOne);
+app.post(photoAPIurl, entry.create);
+// app.put(`${photoAPIurl}/:id`, entry.update);
+// app.delete(`${photoAPIurl}/:id`, entry.delete);
 
 
 

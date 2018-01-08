@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Switch, Route, Link} from 'react-router-dom';
 
-import l1 from './photo-header/l1.jpg' 
+import l1 from './photo-header/l4.jpg' 
 import l2 from './photo-header/l2.jpg';
 import l3 from './photo-header/l3.jpg';
 // import './App.css';
@@ -29,8 +29,8 @@ class Home extends Component {
           <img src={l1} alt="oh! the places you'll go!"/>
           <img src={l2} alt="oh! the places you'll go!"/>
           <img src={l3} alt="oh! the places you'll go!"/>
-          {/* {picArray.forEach(elem=><img src={elem} alt="oh! the places you'll go!"/>)} */}
         </div>
+        
         <div><p className="text-banner"> Oh, the places you'll go!</p></div>    
 
         <footer className="home-footer">
