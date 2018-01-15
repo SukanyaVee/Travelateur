@@ -34,30 +34,26 @@ class Dashboard extends Component {
     displayHolder(){
         for (let i=this.state.entries.length;i>this.state.entries.length-9;i--)
         {
-            if (this.state.entries[i].type === "photos")
-            {
-                return 
-                (<div className="entry-holder">
+            this.state.entries[i].type === "photos"?
+            
+                <div className="entry-holder">
                     {this.state.entries[i].title}
                     <div className="entry-body">
                         <img src={this.state.entries[i].image}/>
                     </div>
                     {this.state.entries[i].location}, {this.state.entries[i].year}
-                </div>)
-            }
-            else if (this.state.entries[i].type === "journals")
-            {
-                return 
-                    (<div className="entry-holder">
+                </div>
+            :
+                <div className="entry-holder">
                         {this.state.entries[i].title}
                         <div className="entry-body">
                             {this.state.entries[i].journal.substring(0,100)}
                         </div>
                         {this.state.entries[i].location}, {this.state.entries[i].year}
-                    </div>)
+                    </div>
             }
         }
-    }
+    
 
   render() {
     

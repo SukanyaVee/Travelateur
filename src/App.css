@@ -12,7 +12,7 @@
   /* background-color: #ffffff; */
 }
 .App-home {
-  background-image: -webkit-linear-gradient(top right,rgb(80,80,20) 15%, rgb(20, 90, 40) 50%, rgb(0,60,120) 100%);
+  background-image: -webkit-linear-gradient(top right,rgb(80,70,20) 15%, rgb(20, 100, 50) 50%, rgb(0,60,120) 100%);
   background-repeat: no-repeat;
   background-size: cover;
   /* min-width: 600px; */
@@ -96,7 +96,7 @@
   font-family: 'Pacifico';
   padding: 20px;
   font-size: 4em;
-  color: rgb(240,240,240);
+  color: #f0f0f0;
   /* text-shadow: 2px -2px grey; */
   display: inline-block;
   margin: 20px;
