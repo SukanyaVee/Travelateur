@@ -12,13 +12,19 @@ class AddEntry extends Component {
         image: '',
         journal: '',
         location: '',
-        year: 0
+        year: 0,
+        uid: this.props.uid
     };
-    // bind functions
+this.createEntry = this.createEntry.bind(this)
 }
 
 componentDidMount(){
-    axios.get()
+    // axios.get()
+}
+
+createEntry(){
+
+    axios.post('/api/travelateur/entries', )
 }
 
 render() {
@@ -31,7 +37,7 @@ render() {
                     Location <input onChange={(e)=>{this.setState({location:e.target.value})}}/> 
                     Year: <input  type="number" min="1000" max="2999" onChange={(e)=>{this.setState({year:e.target.value})}}/> 
                     <Link to="/dashboard">
-                        <button className="add-button" onClick={event=>{               } }>Submit</button>
+                        <button className="add-button" onClick={event=>{  this.createEntry} }>Submit</button>
                     </Link>
                 </div>)
         }

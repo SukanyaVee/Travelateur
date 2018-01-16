@@ -1,1 +1,1 @@
-SELECT * FROM entries WHERE userid =$1;
+SELECT * FROM travelateur_entries WHERE uid =$1;

@@ -11,14 +11,22 @@ massive(process.env.CONNECTION_STRING).then(dbInstance=>{
 }).catch(err=>console.error(err))
 
 app.use(session({
+    //when do we use key?
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false
     // cookie: {maxAge = 10000000}
 }
 ))
+app.use((req, res, next) => {
+    if (!req.session.user){
+        //redirect to login page
+        res.redirect('/login')
+    }
+    next();
+});
 
-const app=express();
+const app=express(); 
 app.use(bodyParser.json());
 app.use(cors());
 

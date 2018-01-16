@@ -1,1 +1,1 @@
-SELECT * FROM entries WHERE pid = $1;
+SELECT * FROM travelateur_entries WHERE eid = $1;

@@ -1,1 +1,1 @@
-DELETE FROM users WHERE uid IS $1;
+DELETE FROM travelateur_users WHERE uid IS $1;

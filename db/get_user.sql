@@ -1,1 +1,1 @@
-SELECT * FROM users WHERE username =$1, password = $2;
+SELECT * FROM travelateur_users WHERE username =$1, password = $2;

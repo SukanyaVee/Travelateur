@@ -2,15 +2,13 @@ import React, { Component } from 'react';
 // import './App.css';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
-import icon from './user-icon.png'
-import AddEntry from './AddEntry'
+import icon from './user-icon.png';
+import {connect} from 'react-redux';
 
 class Dashboard extends Component {
     constructor(props){
         super(props);
         this.state = {
-            //DOES user info come from login/reg page during auth as props ^^ or get from user server vv
-            user: this.props.user,
             entries: []
             };
         };
@@ -56,7 +54,9 @@ class Dashboard extends Component {
     
 
   render() {
-    
+    const user = this.props.user;
+
+     
     return (
         <div className="dashboard">
             <header className="all-header">
@@ -70,8 +70,8 @@ class Dashboard extends Component {
                 Hi Sukanya{this.state.firstname}!
             </div>
             <div className="add-box">
-                <Link to="/dashboard/addjournal" ><button className="big-button">Add a new photo</button></Link>
-                <Link to="/dashboard/addjournal"><button className="big-button">Add a new journal</button></Link>
+                <Link to="/dashboard/addjournal" uid={this.props.user.uid}><button className="big-button">Add a new photo</button></Link>
+                <Link to="/dashboard/addjournal" uid={this.props.user.uid}><button className="big-button">Add a new journal</button></Link>
             </div>
     
             <div className="gallery-container">
@@ -83,4 +83,9 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard;
+const mapStateToProps = state => {
+    return {
+      user: state.user
+    }
+  }
+  export default connect(mapStateToProps)(Dashboard);

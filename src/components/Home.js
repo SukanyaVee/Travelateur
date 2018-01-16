@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
-import {Switch, Route, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 import l1 from './photo-header/l4.jpg' 
 import l2 from './photo-header/l2.jpg';
 import l3 from './photo-header/l3.jpg';
 // import './App.css';
 
-import Login from './Login'
-// import Dashboard from './components/Dashboard';
-// import AddJournal from './components/AddJournal';
-// import AddPhoto from './components/AddPhoto'
+
 
 class Home extends Component {
   render() {
