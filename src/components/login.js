@@ -23,17 +23,21 @@ class Login extends Component {
 
     login(email, password){
         var user = {email: email, password:password}
-        axios.post('/api/travelateur/users', user).then(res=>{
+        axios.post('/api/travelateur/users/login', user).then(res=>{
                 this.props.login(res.data.user);
                 this.props.history.push('/dashboard');
+            }).catch(res=>{
+                this.props.history.push('/login');
             })
     }
 
-    register(firstName, lastName, city,country,email,password){
-        var user = {firstName: firstName, lastName: lastName, city: city, country: country, email: email, password: password}
-        axios.post('/api/travelateur/users', user).then(res=>{
+    register(firstName, lastName, city,country,email,password, social){
+        var user = {firstName: firstName, lastName: lastName, city: city, country: country, email: email, password: password, social: social}
+        axios.post('/api/travelateur/users/create', user).then(res=>{
                 this.props.login(res.data.user);
                 this.props.history.push('/dashboard');
+            }).catch(res=>{
+                this.props.history.push('/login');
             })
     }
 
@@ -75,10 +79,11 @@ class Login extends Component {
                     CITY &emsp; <input onChange={event=>{this.setState({c: event.target.value})}}/><br/><br/>
                     COUNTRY &emsp; <input onChange={event=>{this.setState({d: event.target.value})}}/><br/><br/>
                     EMAIL &emsp; <input onChange={event=>{this.setState({e: event.target.value})}}/><br/><br/>
-                    PASSWORD &emsp; <input onChange={event=>{this.setState({f: event.target.value})}}/> <br/><br/>
+                    PASSWORD &emsp; <input onChange={event=>{this.setState({f: event.target.value})}}/> <br/><br/>            
                     </div>
                     <br/><br/>
                     <div>
+                    *By clicking submit, you consent to sharing your info.<br/>
                         <button className="big-button" onClick={event=>{this.register(this.state.a, this.state.b, this.state.c,this.state.d,this.state.e,this.state.f)} }>Submit</button>  
                         <button class="small-button" onClick={event=>{this.setState({registered: true})}}>Login instead</button>
                     </div>

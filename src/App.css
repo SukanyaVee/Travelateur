@@ -186,11 +186,15 @@ font-size: 12px;
 }
 
 .all-title {
+  background-image: -webkit-linear-gradient(top right,rgb(0,80,120) 25%, rgb(0,120,80)  50%, rgb(0,80,120) 70%);
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
   padding: 50px;
   text-align: left;
-  font-size: 3em;
-  font-family: 'Economica ', sans-serif;
-  color: grey;
+  font-size: 5em;
+  font-family: 'Economica', sans-serif;
+  /* color: grey; */
 }
 
 .dash-greeting {
@@ -247,7 +251,7 @@ font-size: 12px;
   margin: 10px;
   padding: 10px;
   width: 200px;
-  color: white;
+  color: #cccccc;
   font-family: 'pacifico', cursive;
 }
 

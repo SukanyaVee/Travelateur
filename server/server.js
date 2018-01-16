@@ -5,10 +5,16 @@ const massive = require('massive');
 const session = require('express-session')
 const user = require('./user-server');
 const entry = require('./entry-server');
+const bcrypt = require('bcrypt');
+require('dotenv').config()
 
 massive(process.env.CONNECTION_STRING).then(dbInstance=>{
     app.set('db', dbInstance);
 }).catch(err=>console.error(err))
+
+const app=express(); 
+app.use(bodyParser.json());
+app.use(cors());
 
 app.use(session({
     //when do we use key?
@@ -16,8 +22,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false
     // cookie: {maxAge = 10000000}
-}
-))
+}))
 app.use((req, res, next) => {
     if (!req.session.user){
         //redirect to login page
@@ -26,28 +31,23 @@ app.use((req, res, next) => {
     next();
 });
 
-const app=express(); 
-app.use(bodyParser.json());
-app.use(cors());
 
 // -----------------USER-----------------
 const userAPIurl = '/api/travelateur/users'
 
-app.get(`${userAPIurl}/:id`, user.get);
-app.post(userAPIurl, user.create);
-app.put(`${userAPIurl}/:id`, user.update);  
-app.delete(`${userAPIurl}/:id`, user.delete);
+app.post(`${userAPIurl}/login`, user.get);
+app.post(`${userAPIurl}/create`, user.create);
+// app.put(`${userAPIurl}/:id`, user.update);  
+// app.delete(`${userAPIurl}/:id`, user.delete);
 
 // -----------------ENTRIES-----------------
 const entryAPIurl = '/api/travelateur/entries'
 
-app.get(`${photoAPIurl}?userid=:id`, entry.getAll);
-app.get(`${photoAPIurl}/:id`, entry.getOne);
-app.post(photoAPIurl, entry.create);
-// app.put(`${photoAPIurl}/:id`, entry.update);
-// app.delete(`${photoAPIurl}/:id`, entry.delete);
+app.get(`${entryAPIurl}?userid=:id`, entry.getAll);
+app.get(`${entryAPIurl}/:id`, entry.getOne);
+app.post(entryAPIurl, entry.create);
+// app.put(`${entryAPIurl}/:id`, entry.update);
+// app.delete(`${entryAPIurl}/:id`, entry.delete);
 
 
-
-const PORT=3000;
-app.listen(PORT, ()=>console.log('listening on port ' + PORT));
+app.listen(process.env.SERVER_PORT, ()=>console.log('listening on port ' + process.env.SERVER_PORT));
