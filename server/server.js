@@ -30,13 +30,16 @@ const app=express();
 app.use(bodyParser.json());
 app.use(cors());
 
+// -----------------USER-----------------
 const userAPIurl = '/api/travelateur/users'
-const entryAPIurl = '/api/travelateur/entries'
 
 app.get(`${userAPIurl}/:id`, user.get);
 app.post(userAPIurl, user.create);
 app.put(`${userAPIurl}/:id`, user.update);  
 app.delete(`${userAPIurl}/:id`, user.delete);
+
+// -----------------ENTRIES-----------------
+const entryAPIurl = '/api/travelateur/entries'
 
 app.get(`${photoAPIurl}?userid=:id`, entry.getAll);
 app.get(`${photoAPIurl}/:id`, entry.getOne);

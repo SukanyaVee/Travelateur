@@ -16,11 +16,6 @@ class Dashboard extends Component {
     
 
     componentDidMount(){
-        // axios.get(`http://localhost:3000/api/travelateur/user/:${uid}`).then(resp=>{
-        // this.setState({
-        //     user: resp.data.user
-        // })
-        // }).catch(error=>console.log(error))
 
         axios.get(`http://localhost:3000/api/travelateur/entries?userid=${this.props.user.id}`).then(resp=>{
         this.setState({
