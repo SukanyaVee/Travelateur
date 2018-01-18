@@ -28,7 +28,7 @@ class Home extends Component {
           <img src={l3} alt="oh! the places you'll go!"/>
         </div>
         
-        <div><p className="text-banner"> Oh, the places you'll go!</p></div>    
+        <div><p className="text-banner"> <em>Oh, the places you'll go!</em></p></div>    
 
         <footer className="home-footer">
           Sukanya Vijayakumar @DevMountain Full Stack Immersive Personal Project

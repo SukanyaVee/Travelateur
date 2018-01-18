@@ -9,7 +9,7 @@ import Dashboard from './components/Dashboard';
 import AddEntry from './components/AddEntry';
 import UserEdit from './components/UserEdit';
 import Viewer from'./components/Viewer';
-import Inspire from './components/Inspire'
+import Connect from './components/Connect'
 
 class App extends Component {
   render() {
@@ -21,10 +21,10 @@ class App extends Component {
           <Route exact path="/" component={Home}/>
           <Route path='/login' component={Login}/>
           <Route exact path='/dashboard' component={Dashboard}/>
-          <Route path='/dashboard/viewer'component={Viewer}/>
+          {/* <Route path='/dashboard/viewer'component={Viewer}/>
           <Route path="/dashboard/useredit" component={UserEdit}/>
-          <Route exact path='/dashboard/addentry' component={AddEntry}/>
-          <Route path="/inspire" component={Inspire}/>
+          <Route exact path='/dashboard/addentry/:type' component={AddEntry}/> */}
+          {/* <Route path="/dashboard/connect" component={Connect}/> */}
           {/* <Route exact path='/dashboard/addphoto' component={AddPhoto}/> */}
         </Switch> 
 

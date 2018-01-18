@@ -6,8 +6,10 @@ const initialState = {
         uid: 0,
         firstName: '',
         lastName: '',
-        // city: '',
-        // Country: ''
+        city: '',
+        Country: '',
+        email: '',
+        password: ''
     }
 };
 
@@ -26,9 +28,9 @@ export const login = (user) => {
 const reducer = (state=initialState, action) => {
     switch (action.type) {
         case LOGIN: 
-        return {...state, user: action.payload};
+            return {...initialState, user: action.payload};
         default: 
-        return state;
+            return initialState;
     }
 };
 

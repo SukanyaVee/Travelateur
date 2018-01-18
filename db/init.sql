@@ -1,10 +1,10 @@
 CREATE TABLE travelateur_users (
-    uid SERIAL,
+    uid SERIAL UNIQUE,
     firstName TEXT,
     lastName TEXT,
     city TEXT,
     country TEXT,
-    username TEXT,
+    email TEXT UNIQUE,
     password TEXT
 );
 
@@ -15,7 +15,7 @@ CREATE TABLE travelateur_entries (
     image TEXT,
     journal TEXT,
     location TEXT,
-    year INT,
-    uid INT foreign key
+    year INTEGER,
+    uid INTEGER REFERENCES travelateur_users (uid)
 );
 

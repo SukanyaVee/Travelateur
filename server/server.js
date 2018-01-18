@@ -23,30 +23,34 @@ app.use(session({
     saveUninitialized: false
     // cookie: {maxAge = 10000000}
 }))
-app.use((req, res, next) => {
-    if (!req.session.user){
-        //redirect to login page
-        res.redirect('/login')
-    }
-    next();
-});
+
+// USING SESSION CHECK WITH EVERY AXIOS REQUEST (as top level middleware) IS PROBLEMATIC AS IT WOULD HAVE TO BE SATISFIED EVEN BEFORE USER LOGS IN AND SESSION IS SET
+// app.use((req, res, next) => {
+//     if (!req.session.user){
+//         //redirect to login page
+
+//         res.redirect('/login')
+//     }
+//     next();
+// });
 
 
 // -----------------USER-----------------
 const userAPIurl = '/api/travelateur/users'
 
-app.post(`${userAPIurl}/login`, user.get);
-app.post(`${userAPIurl}/create`, user.create);
+app.get(userAPIurl, user.sessionCheck); //works - front & back
+app.post(`${userAPIurl}/login`, user.get); //works - front & back
+app.post(`${userAPIurl}/create`, user.create); //works - front & back
 // app.put(`${userAPIurl}/:id`, user.update);  
-// app.delete(`${userAPIurl}/:id`, user.delete);
+app.delete(`${userAPIurl}/logout`, user.logout);
 
 // -----------------ENTRIES-----------------
 const entryAPIurl = '/api/travelateur/entries'
 
-app.get(`${entryAPIurl}?userid=:id`, entry.getAll);
-app.get(`${entryAPIurl}/:id`, entry.getOne);
-app.post(entryAPIurl, entry.create);
-// app.put(`${entryAPIurl}/:id`, entry.update);
+app.get(`${entryAPIurl}/get`, entry.getAll); //works - backend only
+// app.get(`${entryAPIurl}/:id`, entry.getOne);
+app.post(entryAPIurl, entry.create); //works - backend only
+app.put(`${entryAPIurl}/:eid`, entry.update); // works - backend only
 // app.delete(`${entryAPIurl}/:id`, entry.delete);
 
 
