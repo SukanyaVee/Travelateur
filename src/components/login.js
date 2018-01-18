@@ -103,10 +103,10 @@ class Login extends Component {
     }
 }
  
-function mapStateToProps (state) {
-    const {uid, firstName, lastName, city, country, username, password} = state
-    return {uid, firstName, lastName, city, country, username, password}
-}
+// function mapStateToProps (state) {
+//     const {uid, firstName, lastName, city, country, username, password} = state
+//     return {uid, firstName, lastName, city, country, username, password}
+// }
 const mapDispatchToProps = {
     login: login
   }

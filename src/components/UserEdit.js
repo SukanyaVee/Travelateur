@@ -21,7 +21,7 @@ class UserEdit extends Component {
 
     login(firstName, lastName, city, country, email, password){
         var user = {email: email, password:password}
-        axios.post('/api/travelateur/users/login', user).then(res=>{
+        axios.put('/api/travelateur/users/login', user).then(res=>{
                 this.props.login(res.data.user);
                 this.browser.history.push('/dashboard');
             }).catch(error=>{
@@ -64,12 +64,12 @@ class UserEdit extends Component {
                 <div className="reg-container">
                     
                     <div className="align-input-fields">
-                    FIRST NAME &emsp; <input onChange={event=>{this.setState({a: event.target.value})}}/><br/><br/>
-                    LAST NAME &emsp; <input onChange={event=>{this.setState({b: event.target.value})}}/><br/><br/>
-                    CITY &emsp; <input onChange={event=>{this.setState({c: event.target.value})}}/><br/><br/>
-                    COUNTRY &emsp; <input onChange={event=>{this.setState({d: event.target.value})}}/><br/><br/>
-                    EMAIL &emsp; <input onChange={event=>{this.setState({e: event.target.value})}}/><br/><br/>
-                    PASSWORD &emsp; <input onChange={event=>{this.setState({f: event.target.value})}}/> <br/><br/>            
+                    FIRST NAME &emsp; <input placeholder="this.props.user.firstName" onChange={event=>{this.setState({a: event.target.value})}}/><br/><br/>
+                    LAST NAME &emsp; <input placeholder="this.props.user.lastName" onChange={event=>{this.setState({b: event.target.value})}}/><br/><br/>
+                    CITY &emsp; <input placeholder="this.props.user.city" onChange={event=>{this.setState({c: event.target.value})}}/><br/><br/>
+                    COUNTRY &emsp; <input placeholder="this.props.user.country" onChange={event=>{this.setState({d: event.target.value})}}/><br/><br/>
+                    EMAIL &emsp; <input type="email" placeholder="this.props.user.email"  onChange={event=>{this.setState({e: event.target.value})}}/><br/><br/>
+                    PASSWORD &emsp; <input type="password" placeholder="this.props.user.password" onChange={event=>{this.setState({f: event.target.value})}}/> <br/><br/>            
                     </div>
                     <br/><br/>
                     <div>

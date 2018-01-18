@@ -17,21 +17,22 @@ class Dashboard extends Component {
             };
         this.logout=this.logout.bind(this)
         this.displayHolder=this.displayHolder.bind(this)    
-        this.someFunc=this.someFunc.bind(this)    
         };
     
 
     componentDidMount(){
-        axios.get('/api/travelateur/users').catch(error=>{
-            console.log('session does not exist', this.state.isLoggedIn);
-            this.props.history.push('/login')
-        })
+        // axios.get('/api/travelateur/users').catch(error=>{
+        //     console.log('session does not exist', this.state.isLoggedIn);
+        //     this.props.history.push('/login')
+        // })
 
-        // axios.get(`http://localhost:3000/api/travelateur/entries?uid=${this.props.user.uid}`).then(resp=>{
-        // this.setState({
-        //     entries: resp.data.entries
-        //    })
-        // }).catch(error=>console.log(error))
+        axios.get(`/api/travelateur/entries/get?uid=12`).then(resp=>{
+        this.setState({
+            entries: resp.data
+           })
+           console.log(this.state.entries)
+        }).catch(error=>console.log(error))
+        
   
     }
 
@@ -42,22 +43,23 @@ class Dashboard extends Component {
         }).catch(error=>{console.log('error logging out')})
     }
 
-    someFunc(){
-        console.log('xyz')
-        axios.get(`/api/travelateur/entries/get?uid=12`).then(resp=>{
-            this.setState({
-                entries: resp.data
-            })
-            console.log(this.state.entries)
+    // someFunc(){
+    //     console.log('xyz')
+    //     ,this.displayHolder)
+            
 
-        this.displayHolder();
-        }).catch(error=>console.log(error))}
+            
+
+    //     // this.displayHolder();
+    //     }).catch(error=>console.log(error))}
 
     displayHolder(){
+        console.log(this.state.entries)
         if (this.state.entries[0])
         {
-            for (let i=this.state.entries.length-1;i>this.state.entries.length-10;i--)
+            for (let i=this.state.entries.length-1;i>this.state.entries.length-3&&i>=0;i--)
             {
+                console.log(this.state.entries[i])
                 this.state.entries[i].type === "photo"?
                     
                     <div className="entry-holder">
@@ -97,16 +99,15 @@ class Dashboard extends Component {
                 </header>
                 
                 <div className="dash-greeting">
-                    Hi {user.firstName}!
+                    Hi {user.firstName} {user.lastName}!
                 </div>
                 <div className="add-box">
                     <Link to="/dashboard/addentry/photo"><button className="big-button">+ photo</button></Link>
                     <Link to="/dashboard/addentry/journal"><button className="big-button">+ journal</button></Link>
                 </div>
-                {/* TEST BUTTON */}
-                <button onClick={this.someFunc}>Get entries</button>
+                
                 <div className="gallery-container">
-                {this.displayHolder()} //
+                {this.displayHolder} 
                 Check 1,2,6
                 </div>
             </div>

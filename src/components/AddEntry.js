@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 // import './App.css';
-import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
 class AddEntry extends Component {
@@ -18,12 +17,18 @@ class AddEntry extends Component {
         this.createEntry = this.createEntry.bind(this)
     }
 
+    componentDidMount(){
+        axios.get('/api/travelateur/users').catch(error=>{
+            console.log('session does not exist', this.state.isLoggedIn);
+            this.props.history.push('/login')
+        })
+    }
 
-
-    createEntry(title,type, image,journal,location,year){
+    createEntry(title, image,journal,location,year){
+        console.log(this.props.user.uid)
         const entry={
             title: title,
-            type: type,
+            type: this.props.match.params.type,
             image: image,
             journal: journal,
             location: location,
@@ -40,32 +45,32 @@ class AddEntry extends Component {
         if (this.state.type==="photo") {
             return (
                 <div>
-                    TITLE <input onChange={(e)=>{this.setState({title:e.target.value})}}/>
-                    IMAGE URL <input onChange={(e)=>{this.setState({image:e.target.value})}}/> 
-                    LOCATION (Country) <input onChange={(e)=>{this.setState({location:e.target.value})}}/> 
-                    YEAR <input  type="number" min="1000" max="2999" onChange={(e)=>{this.setState({year:e.target.value})}}/> 
-                        <button className="add-button" onClick={event=>{  this.createEntry} }>Submit</button>
+                    TITLE <input onChange={(e)=>{this.setState({title:e.target.value})}}/><br/><br/>
+                    IMAGE URL <input onChange={(e)=>{this.setState({image:e.target.value})}}/> <br/><br/>
+                    LOCATION (Country) <input onChange={(e)=>{this.setState({location:e.target.value})}}/> <br/><br/>
+                    {/* Use Dropzone or react s3 uploader instead */}
+                    YEAR <input  type="number" min="1000" max="2999" onChange={(e)=>{this.setState({year:e.target.value})}}/> <br/><br/>
+                        <button className="add-button" onClick={event=>{  this.createEntry(this.state.title,  this.state.image, this.state.journal, this.state.location, this.state.year)} }>Submit</button>
                 </div>)
         }
         else if (this.state.type==="journal"){
             return (
                 <div>
-                    TITLE <input onChange={(e)=>{this.setState({title:e.target.value})}}/>
-                    JOURNAL ENTRY <input onChange={(e)=>{this.setState({journal:e.target.value})}}/> 
-                    LOCATION (Country) <input onChange={(e)=>{this.setState({location:e.target.value})}}/> 
-                    YEAR <input type="number" min="1000" max="2999" onChange={(e)=>{this.setState({year:e.target.value})}}/> 
-                    <button className="add-button" onClick={event=>{this.createEntry(this.state.title, this.state.type, this.state.image, this.state.journal, this.state.location, this.state.year)} }>Submit</button>
+                    this.props.user.uid {this.props.user.uid}
+                    TITLE <input onChange={(e)=>{this.setState({title:e.target.value})}}/><br/><br/>
+                    JOURNAL ENTRY <textarea id="journal-textbox" onChange={(e)=>{this.setState({journal:e.target.value})}}> </textarea><br/><br/>
+                    LOCATION (Country) <input onChange={(e)=>{this.setState({location:e.target.value})}}/> <br/><br/>
+                    YEAR <input type="number" min="1000" max="2999" onChange={(e)=>{this.setState({year:e.target.value})}}/> <br/><br/>
+                    <button className="add-button" onClick={event=>{this.createEntry(this.state.title,  this.state.image, this.state.journal, this.state.location, this.state.year)} }>Submit</button>
                 </div>)
         }
     }
-
-    
 }
-export default AddEntry;
 
-// const mapStateToProps = state => {
-//     return {
-//       user: state.user
-//     }
-//   }
-//   export default connect(mapStateToProps)(AddEntry);
+const mapStateToProps = state => {
+    return {
+      user: state.user
+    }
+  }
+
+export default connect(mapStateToProps)(AddEntry);
