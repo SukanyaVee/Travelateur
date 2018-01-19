@@ -25,7 +25,7 @@ class Login extends Component {
         var user = {"email": email, "password": password}
         axios.post('/api/travelateur/users/login', user).then(res=>{
                 this.props.login(res.data.user);
-                this.props.history.push('/dashboard');
+                this.props.history.push('/dashboard/gallery');
             }).catch(res=>{
                 // this.props.history.push('/login');
                 console.log(res)
@@ -36,7 +36,7 @@ class Login extends Component {
         var user = {"firstName": firstName, "lastName": lastName, "city": city, "country": country, "email": email, "password": password}
         axios.post('/api/travelateur/users/create', user).then(res=>{
                 this.props.login(res.data.user);
-                this.props.history.push('/dashboard');
+                this.props.history.push('/dashboard/gallery');
             }).catch(res=>{
                 // this.props.history.push('/login');
                 console.log(res)
@@ -45,7 +45,7 @@ class Login extends Component {
 
     componentDidMount(){
         axios.get('/api/travelateur/users').then(res=>{
-        this.props.history.push('/dashboard')
+        this.props.history.push('/dashboard/gallery')
         })
     }
 

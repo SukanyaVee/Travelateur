@@ -280,11 +280,11 @@ font-size: 12px;
 }
 
 .entry-holder{
-  background-color: rgb(30, 30, 30);
+  background-color: #eeeeee;
   margin: 10px;
   padding: 10px;
   width: 200px;
-  color: #eeeeee;
+  color: black;
   font-family: 'Satisfy', cursive;
 }
 
@@ -294,14 +294,17 @@ font-size: 12px;
 }
 
 .entry-body {
-  background-color: #dddddd;
-  font-family: Georgia, 'Times New Roman', serif;
+  background-color: white;
+  color: #333333;
+  font-family: sans-serif;
+  font-size: 14px;
   height: auto;
   }
 
 .entry-body > img {
   max-width: 100%;
   max-height: 100%;
+  cursor: default;
 }
 
 /* -------------------ADD ENTRY PAGE ------------------------- */

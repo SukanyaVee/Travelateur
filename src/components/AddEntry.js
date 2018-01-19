@@ -36,7 +36,7 @@ class AddEntry extends Component {
             uid: this.props.user.uid
         }
         axios.post('/api/travelateur/entries', entry).then(entry=>{
-            this.props.history.push('/dashboard');
+            this.props.history.push('/dashboard/gallery');
         })
     }
 
@@ -58,7 +58,7 @@ class AddEntry extends Component {
                 <div>
                     this.props.user.uid {this.props.user.uid}
                     TITLE <input onChange={(e)=>{this.setState({title:e.target.value})}}/><br/><br/>
-                    JOURNAL ENTRY <textarea id="journal-textbox" onChange={(e)=>{this.setState({journal:e.target.value})}}> </textarea><br/><br/>
+                    JOURNAL ENTRY <textarea maxlength="1000" id="journal-textbox" onChange={(e)=>{this.setState({journal:e.target.value})}}> </textarea><br/><br/>
                     LOCATION (Country) <input onChange={(e)=>{this.setState({location:e.target.value})}}/> <br/><br/>
                     YEAR <input type="number" min="1000" max="2999" onChange={(e)=>{this.setState({year:e.target.value})}}/> <br/><br/>
                     <button className="add-button" onClick={event=>{this.createEntry(this.state.title,  this.state.image, this.state.journal, this.state.location, this.state.year)} }>Submit</button>
