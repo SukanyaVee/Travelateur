@@ -41,7 +41,7 @@ const userAPIurl = '/api/travelateur/users'
 app.get(userAPIurl, user.sessionCheck); //works - front & back
 app.post(`${userAPIurl}/login`, user.get); //works - front & back
 app.post(`${userAPIurl}/create`, user.create); //works - front & back
-// app.put(`${userAPIurl}/:id`, user.update);  
+app.put(`${userAPIurl}/:id`, user.update);  
 app.delete(`${userAPIurl}/logout`, user.logout);
 
 // -----------------ENTRIES-----------------

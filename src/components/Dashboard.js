@@ -7,8 +7,11 @@ import userI from './user-icon.png';
 import connectI from './connect-icon.png';
 import logoutI from './logout-icon.png';
 import menuI from './menu-icon.png';
+import {login} from '../ducks/reducer';
+
 import Gallery from './Gallery'
 import AddEntry from './AddEntry';
+import UserEdit from './UserEdit';
 
 
 class Dashboard extends Component {
@@ -28,7 +31,7 @@ class Dashboard extends Component {
             this.props.history.push('/login')
         })
 
-        axios.get(`/api/travelateur/entries/get?uid=12`).then(resp=>{
+        axios.get(`/api/travelateur/entries/get?uid=${this.props.user.uid}`).then(resp=>{
         this.setState({
             entries: resp.data
            })
@@ -40,7 +43,16 @@ class Dashboard extends Component {
 
     logout(){
         axios.delete('/api/travelateur/users/logout').then(res=>{
-            this.props.login(res.data);
+            this.props.login({
+                uid: 0,
+                firstName: '',
+                lastName: '',
+                city: '',
+                Country: '',
+                email: '',
+                password: ''
+            });
+            console.log(this.state.user)
             this.setState({entries: []})
             this.props.history.push('/')
         }).catch(error=>{console.log('error logging out')})
@@ -54,13 +66,20 @@ class Dashboard extends Component {
         return (
             <div className="dashboard">
                 
-                    <Route path='/dashboard/gallery' render={()=><Gallery  entries={this.state.entries}/>}/>
+                <main>
+                
+                <div className="dash-greeting">
+                    Hi {user.firstName} {user.lastName}!
+                </div>
+
+                
+                <Route path='/dashboard/gallery' render={()=><Gallery  entries={this.state.entries}/>}/>
                     {/* <Route path='/dashboard/viewer'component={Viewer}/> */}
-                    {/* <Route path="/dashboard/useredit" component={UserEdit}/> */}
+                    <Route path="/dashboard/useredit" component={UserEdit}/>
                     <Route path='/dashboard/addentry/:type' component={AddEntry}/>
                     {/* <Route path="/dashboard/connect" component={Connect}/> */}
-
-                <header className="all-header">
+                </main>
+                <aside className="all-header">
                     <div className="all-title"><Link to="/"><b>travel</b>ateur</Link></div>
                     <div className="user-box">
                     <Link to='/dashboard/useredit'><img src={userI} className="icon" width="30"/></Link>
@@ -69,18 +88,7 @@ class Dashboard extends Component {
                     {/* <button className="small-button">Logout</button> */}
                     {/* <button className="big-button">Social</button> */}
                     </div> 
-                </header>
-                
-                <div className="dash-greeting">
-                    Hi {user.firstName} {user.lastName}!
-                </div>
-
-                <div className="add-box">
-                    <Link to="/dashboard/addentry/photo"><button className="big-button">+ photo</button></Link>
-                    <Link to="/dashboard/addentry/journal"><button className="big-button">+ journal</button></Link>
-                </div>
-
-                
+                </aside>
             </div>
         )
     }
@@ -91,4 +99,8 @@ const mapStateToProps = state => {
       user: state.user
     }
   }
-  export default connect(mapStateToProps)(Dashboard);
+  const mapDispatchToProps = {
+    login: login
+  }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

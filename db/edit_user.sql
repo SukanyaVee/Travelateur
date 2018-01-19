@@ -1,2 +1,2 @@
-UPDATE travelateur_users SET city = $2, country = $3 WHERE uid IS $1
+UPDATE travelateur_users SET firstName = $2, lastname = $3, city=$4, country=$5, email=$6, password=$7 WHERE uid = $1
 RETURNING *;

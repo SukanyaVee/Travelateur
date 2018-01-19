@@ -15,7 +15,7 @@ export default function GalleryItem (props){
                     <div className="entry-holder">
                         <b>{props.entry.title}</b>
                         <div className="entry-body">
-                            {props.entry.journal.substr(0,160)}
+                            {props.entry.journal.substr(0,250)}
                         </div>
                         {props.entry.location}, {props.entry.year}
                     </div>)

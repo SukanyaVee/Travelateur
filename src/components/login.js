@@ -52,16 +52,6 @@ class Login extends Component {
     render() {
         return (
             <div className="dashboard">
-                <header className="login-header">
-                    <div className="App-title"><b><b>travel</b></b>ateur</div>
-                </header>
-                {/* First Name: <input onChange=""/>
-                Last Name: <input onChange=""/>
-                City: <input onChange=""/>
-                State: <input onChange=""/> */}
-                <div className="dash-greeting">
-                    Welcome!
-                </div>
                 
                 <div className="login-container">
                     
@@ -98,15 +88,16 @@ class Login extends Component {
                 </div>
                 }
                 </div>
+                <header className="login-header">
+                    <div className="login-title"><b><b>travel</b></b>ateur</div>
+                </header>
+                
             </div>
         );
     }
 }
  
-// function mapStateToProps (state) {
-//     const {uid, firstName, lastName, city, country, username, password} = state
-//     return {uid, firstName, lastName, city, country, username, password}
-// }
+
 const mapDispatchToProps = {
     login: login
   }

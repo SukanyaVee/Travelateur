@@ -14,6 +14,9 @@ class Home extends Component {
 
     return (
       <div className="App-home">
+        <footer className="home-footer">
+          Sukanya Vijayakumar @DevMountain Full Stack Immersive Personal Project
+        </footer>
         <header className="App-header">
           <div className="App-title"><b><b>travel</b></b>ateur</div>
           <div className="login-box">
@@ -22,17 +25,15 @@ class Home extends Component {
           </div>
         </header>
         
-        <div className="photo-banner">
+        {/* <div className="photo-banner">
           <img src={l1} alt="oh! the places you'll go!"/>
           <img src={l2} alt="oh! the places you'll go!"/>
           <img src={l3} alt="oh! the places you'll go!"/>
-        </div>
+        </div> */}
         
-        <div><p className="text-banner"> <em>Oh, the places you'll go!</em></p></div>    
+        {/* <div><p className="text-banner"> <em>Oh, the places you'll go!</em></p></div>     */}
 
-        <footer className="home-footer">
-          Sukanya Vijayakumar @DevMountain Full Stack Immersive Personal Project
-        </footer>
+        
       </div>
     );
   }
