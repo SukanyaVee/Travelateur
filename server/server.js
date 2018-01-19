@@ -6,11 +6,27 @@ const session = require('express-session')
 const user = require('./user-server');
 const entry = require('./entry-server');
 const bcrypt = require('bcrypt');
+const AWS = require('aws-sdk');
 require('dotenv').config()
 
 massive(process.env.CONNECTION_STRING).then(dbInstance=>{
     app.set('db', dbInstance);
 }).catch(err=>console.error(err))
+
+// AWS.config.loadFromPath('pathToJsonFile');//put in access creds from .env
+// const s3 = new AWS.S3();
+// const bucketParams = {Bucket: 'sukanya.devmountain.travelateur'}
+// var s3Bucket = new AWS.S3({params: bucketParams});
+// s3.listObjects(bucketParams, (err, data)=>{
+//     for(let i=0;i<data.Contents.length;i++){
+//         var urlParams = {Bucket: 'sukanya.devmoutain.travelateur', Key: data.contents[i].Key};
+//         s3.getSignedUrl('getObject', urlParams, (err,url)=>{
+//             return url
+//             console.log('the url of the image is', url);
+//         })
+//     }
+// })
+
 
 const app=express(); 
 app.use(bodyParser.json());
