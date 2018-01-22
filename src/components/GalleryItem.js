@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 export default function GalleryItem (props){
 
@@ -17,7 +18,8 @@ export default function GalleryItem (props){
                         <div className="entry-body">
                             {props.entry.journal.substr(0,250)}
                         </div>
-                        {props.entry.location}, {props.entry.year}
+                        {props.entry.location}, {props.entry.year} &nbsp;&nbsp;&nbsp;&nbsp;
+                        <Link to={`/dashboard/viewer/${props.entry.eid}`}><b>+</b></Link>
                     </div>)
                     
             

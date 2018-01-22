@@ -5,6 +5,7 @@ import {login} from '../ducks/reducer';
 import axios from 'axios';
 
 
+
 class UserEdit extends Component {
     constructor(){
         super();
@@ -33,10 +34,9 @@ class UserEdit extends Component {
 
     render() {
         return (
-            <div className="dashboard">
+            <div className="Viewer">
                
-              
-
+    
                 Update your deets below
                     
                     <div className="align-input-fields">
@@ -54,7 +54,7 @@ class UserEdit extends Component {
                     *By clicking submit, you consent to sharing your info.<br/>
                         <button className="big-button" onClick={event=>{this.edit(this.state.a, this.state.b, this.state.c,this.state.d,this.state.e,this.state.f)} }>Submit</button>  
                     </div>
-            
+
             </div>
         );
     }

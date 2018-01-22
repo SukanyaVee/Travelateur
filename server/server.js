@@ -64,7 +64,7 @@ app.delete(`${userAPIurl}/logout`, user.logout);
 const entryAPIurl = '/api/travelateur/entries'
 
 app.get(`${entryAPIurl}/get`, entry.getAll); //works - backend only
-// app.get(`${entryAPIurl}/:id`, entry.getOne);
+app.get(`${entryAPIurl}/get/:eid`, entry.getOne);
 app.post(entryAPIurl, entry.create); //works - backend only
 app.put(`${entryAPIurl}/:eid`, entry.update); // works - backend only
 // app.delete(`${entryAPIurl}/:id`, entry.delete);

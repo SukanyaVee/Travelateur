@@ -6,7 +6,7 @@ import './App.css';
 import Home from './components/Home'
 import Login from './components/Login'
 import Dashboard from './components/Dashboard';
-import AddEntry from './components/AddEntry';
+// import AddEntry from './components/AddEntry';
 // import UserEdit from './components/UserEdit';
 // import Viewer from'./components/Viewer';
 // import Connect from './components/Connect';d

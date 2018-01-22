@@ -166,6 +166,13 @@ a {
   font-family: 'Economica', sans-serif;
 }
 
+.login-title a {
+  background-image: -webkit-linear-gradient(top right,rgb(0,30,40) 25%, rgb(0,80,120)  60%, rgb(0,30,40) 70%);
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
 .login-container {
   align-content: center;
 text-align: center;  /* width: 300px; */
@@ -174,7 +181,7 @@ text-align: center;  /* width: 300px; */
   padding: 50px;
   text-align: center;
   height: 100%;
-  border: 2px solid black;
+  margin: 50px;
 }
 
 .reg-container {
@@ -260,7 +267,8 @@ main {
 
 .dash-greeting {
   background: white;
-  text-align: center;
+  text-align: left;
+  padding-left: 20px;
   font-size: 3em;
   font-family: 'Satisfy', cursive;
   color: rgb(100, 100, 100);
@@ -333,7 +341,8 @@ main {
 
 .entry-holder:hover {
   box-shadow: 5px 10px 10px grey;
-  background-color: #dddddd;
+  /* background-color: white; */
+  transform: scale(1.1)
 }
 
 .entry-body {
@@ -355,4 +364,21 @@ main {
 #journal-textbox {
   width: 300px;
   height: 200px;
+}
+/* ------------------------VIEWER------------------------------- */
+.Viewer {
+  margin: 30px;
+}
+.Viewer h1{
+  font-family: 'Economica', sans-serif;
+}
+.Viewer h3{
+  font-family: 'Satisfy', cursive;
+}
+.Viewer p{
+  font-family: sans-serif;
+}
+.Viewer img {
+  background-color: #eeeeee;
+  padding: 10px;
 }

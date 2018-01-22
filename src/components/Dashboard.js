@@ -12,6 +12,7 @@ import {login} from '../ducks/reducer';
 import Gallery from './Gallery'
 import AddEntry from './AddEntry';
 import UserEdit from './UserEdit';
+import Viewer from './Viewer';
 
 
 class Dashboard extends Component {
@@ -77,14 +78,15 @@ class Dashboard extends Component {
                     {/* <Route path='/dashboard/viewer'component={Viewer}/> */}
                     <Route path="/dashboard/useredit" component={UserEdit}/>
                     <Route path='/dashboard/addentry/:type' component={AddEntry}/>
+                    <Route path='/dashboard/viewer/:eid' component={Viewer}/>
                     {/* <Route path="/dashboard/connect" component={Connect}/> */}
                 </main>
                 <aside className="all-header">
-                    <div className="all-title"><Link to="/"><b>travel</b>ateur</Link></div>
+                    <div className="all-title"><Link to="/dashboard/gallery"><b>travel</b>ateur</Link></div>
                     <div className="user-box">
-                    <Link to='/dashboard/useredit'><img src={userI} className="icon" width="30"/></Link>
-                    <Link to='/dashboard/connect'><img src={connectI} className="icon"  width="30"/></Link>
-                    <img src={logoutI} width="30"  className="icon" onClick={this.logout}/>
+                    <Link to='/dashboard/useredit'><img src={userI} alt="user edit" className="icon" width="30"/></Link>
+                    <Link to='/dashboard/connect'><img src={connectI} alt="connect" className="icon"  width="30"/></Link>
+                    <img src={logoutI} width="30"  alt ="logout" className="icon" onClick={this.logout}/>
                     {/* <button className="small-button">Logout</button> */}
                     {/* <button className="big-button">Social</button> */}
                     </div> 

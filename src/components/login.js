@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {login} from '../ducks/reducer';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 
 class Login extends Component {
@@ -60,7 +61,7 @@ class Login extends Component {
                     
                     <div className="align-input-fields">
                     EMAIL &emsp; <input type="email" onChange={event=>{this.setState({e: event.target.value})}}/><br/><br/>
-                    PASSWORD &emsp; <input type="password" onChange={event=>{this.setState({f: event.target.value})}}/> <br/><br/>
+                    PASSWORD &emsp; <input type="password" onChange={event=>{this.setState({f: event.target.value})}}/> 
                     </div>
                     <br/><br/>
                     <div>
@@ -77,7 +78,7 @@ class Login extends Component {
                     CITY &emsp; <input onChange={event=>{this.setState({c: event.target.value})}}/><br/><br/>
                     COUNTRY &emsp; <input onChange={event=>{this.setState({d: event.target.value})}}/><br/><br/>
                     EMAIL &emsp; <input type="email" onChange={event=>{this.setState({e: event.target.value})}}/><br/><br/>
-                    PASSWORD &emsp; <input  type="password" onChange={event=>{this.setState({f: event.target.value})}}/> <br/><br/>            
+                    PASSWORD &emsp; <input  type="password" onChange={event=>{this.setState({f: event.target.value})}}/>            
                     </div>
                     <br/><br/>
                     <div>
@@ -89,7 +90,7 @@ class Login extends Component {
                 }
                 </div>
                 <header className="login-header">
-                    <div className="login-title"><b><b>travel</b></b>ateur</div>
+                    <div className="login-title"><Link to='/'><b><b>travel</b></b>ateur</Link></div>
                 </header>
                 
             </div>

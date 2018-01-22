@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 
-import l1 from './photo-header/l4.jpg' 
-import l2 from './photo-header/l2.jpg';
-import l3 from './photo-header/l3.jpg';
+// import l1 from './photo-header/l4.jpg' 
+// import l2 from './photo-header/l2.jpg';
+// import l3 from './photo-header/l3.jpg';
 // import './App.css';
 
 
@@ -20,7 +20,7 @@ class Home extends Component {
         <header className="App-header">
           <div className="App-title"><b><b>travel</b></b>ateur</div>
           <div className="login-box">
-            <Link to='' className="links"><button className="login-home-button">find inspiration</button></Link>
+            {/* <Link to='' className="links"><button className="login-home-button">find inspiration</button></Link> */}
             <Link to='/login' className="links"><button className="login-home-button">login</button></Link>
           </div>
         </header>

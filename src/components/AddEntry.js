@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import axios from 'axios';
 // import './App.css';
 import {connect} from 'react-redux';
+// import userI from './user-icon.png';
+// import connectI from './connect-icon.png';
+// import logoutI from './logout-icon.png';
+// import menuI from './menu-icon.png';
+
 
 class AddEntry extends Component {
     constructor(props){
@@ -17,12 +22,12 @@ class AddEntry extends Component {
         this.createEntry = this.createEntry.bind(this)
     }
 
-    componentDidMount(){
-        axios.get('/api/travelateur/users').catch(error=>{
-            console.log('session does not exist', this.state.isLoggedIn);
-            this.props.history.push('/login')
-        })
-    }
+    // componentDidMount(){
+    //     axios.get('/api/travelateur/users').catch(error=>{
+    //         console.log('session does not exist', this.state.isLoggedIn);
+    //         this.props.history.push('/login')
+    //     })
+    // }
 
     createEntry(title, image,journal,location,year){
         console.log(this.props.user.uid)
@@ -42,9 +47,9 @@ class AddEntry extends Component {
 
     render() {
 
-        if (this.state.type==="photo") {
+        if (this.props.match.params.type==="photo") {
             return (
-                <div>
+                <div className="Viewer">
                     TITLE <input onChange={(e)=>{this.setState({title:e.target.value})}}/><br/><br/>
                     IMAGE URL <input onChange={(e)=>{this.setState({image:e.target.value})}}/> <br/><br/>
                     LOCATION (Country) <input onChange={(e)=>{this.setState({location:e.target.value})}}/> <br/><br/>
@@ -55,7 +60,7 @@ class AddEntry extends Component {
         }
         else if (this.state.type==="journal"){
             return (
-                <div>
+                <div className="Viewer">
                     this.props.user.uid {this.props.user.uid}
                     TITLE <input onChange={(e)=>{this.setState({title:e.target.value})}}/><br/><br/>
                     JOURNAL ENTRY <textarea maxlength="1000" id="journal-textbox" onChange={(e)=>{this.setState({journal:e.target.value})}}> </textarea><br/><br/>

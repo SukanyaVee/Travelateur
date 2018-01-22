@@ -7,12 +7,13 @@ module.exports = {
             console.log('entry', entry)
         }).catch(error=>{console.error(error);res.status(500).send(error)})
         },
-    // getOne:(req, res, next) => {
-    //     const dbInstance = req.app.get('db')
-    //     dbInstance.get_entry([req.params.id]).then(entry=> res.status(200).send(entry)).catch(error=>{console.error(error);res.status(500).send(err)})
-    //     },
+    getOne:(req, res, next) => {
+        const dbInstance = req.app.get('db')
+        console.log('req.params', req.params.eid)
+        dbInstance.get_entry([req.params.eid]).then(entry=> res.status(200).send(entry[0])).catch(error=>{console.error(error);res.status(500).send(err)})
+        },
     getAll:(req, res, next) => {
-        console.log('getAllFunc',req.query.uid)
+        console.log('getAll uid',req.query.uid)
         const dbInstance = req.app.get('db') 
         dbInstance.get_entries([req.query.uid]).then(entry=> res.status(200).send(entry)).catch(error=>{console.error(error);res.status(500).send(err)})
         },
