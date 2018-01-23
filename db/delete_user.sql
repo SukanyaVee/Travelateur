@@ -1,1 +1,0 @@
-DELETE FROM travelateur_users WHERE uid IS $1 RETURNING *;

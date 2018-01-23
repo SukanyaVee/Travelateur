@@ -1,5 +1,8 @@
+DROP TABLE travelateur_entries;
+DROP TABLE travelateur_users;
+
 CREATE TABLE travelateur_users (
-    uid SERIAL UNIQUE,
+    uid SERIAL PRIMARY KEY,
     firstName TEXT,
     lastName TEXT,
     city TEXT,
@@ -9,7 +12,7 @@ CREATE TABLE travelateur_users (
 );
 
 CREATE TABLE travelateur_entries (
-    eid SERIAL,
+    eid SERIAL PRIMARY KEY,
     type TEXT,
     title TEXT,
     image TEXT,
@@ -19,3 +22,5 @@ CREATE TABLE travelateur_entries (
     uid INTEGER REFERENCES travelateur_users (uid)
 );
 
+SELECT * FROM travelateur_entries;
+SELECT * FROM travelateur_users;

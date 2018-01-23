@@ -1,0 +1,1 @@
+DELETE FROM travelateur_entries WHERE eid IS $1 RETURNING *;

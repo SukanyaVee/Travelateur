@@ -3,16 +3,17 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {Route, Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import userI from './user-icon.png';
-import connectI from './connect-icon.png';
-import logoutI from './logout-icon.png';
-import menuI from './menu-icon.png';
+import userI from './assets/user-icon.png';
+import connectI from './assets/connect-icon.png';
+import logoutI from './assets/logout-icon.png';
+import menuI from './assets/menu-icon.png';
 import {login} from '../ducks/reducer';
 
 import Gallery from './Gallery'
 import AddEntry from './AddEntry';
 import UserEdit from './UserEdit';
 import Viewer from './Viewer';
+import Connect from './Connect';
 
 
 class Dashboard extends Component {
@@ -72,14 +73,11 @@ class Dashboard extends Component {
                 <div className="dash-greeting">
                     Hi {user.firstName} {user.lastName}!
                 </div>
-
-                
-                <Route path='/dashboard/gallery' render={()=><Gallery  entries={this.state.entries}/>}/>
-                    {/* <Route path='/dashboard/viewer'component={Viewer}/> */}
+                    <Route path='/dashboard/gallery' render={()=><Gallery  entries={this.state.entries}/>}/>
                     <Route path="/dashboard/useredit" component={UserEdit}/>
                     <Route path='/dashboard/addentry/:type' component={AddEntry}/>
                     <Route path='/dashboard/viewer/:eid' component={Viewer}/>
-                    {/* <Route path="/dashboard/connect" component={Connect}/> */}
+                    <Route path="/dashboard/connect" component={Connect}/>
                 </main>
                 <aside className="all-header">
                     <div className="all-title"><Link to="/dashboard/gallery"><b>travel</b>ateur</Link></div>

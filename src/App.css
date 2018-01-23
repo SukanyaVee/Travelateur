@@ -14,7 +14,7 @@ a {
 /* ---------------------HOME------------------ */
 .App-home {
   /* background-image: -webkit-linear-gradient(top left,rgb(30,30,50) 25%, rgb(80,130,160)  50%, rgb(30,30,50) 70%); */
-  background-image: url("./components/photo-header/oldworldmap.jpg");
+  background-image: url("./components/assets/home.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   /* min-width: 600px; */
@@ -32,7 +32,7 @@ a {
 
 .App-header {
   position: absolute;
-  bottom: 30px;
+  top: 100px;
   right: 30px;
   display: flex;
   flex-direction: column;
@@ -123,7 +123,7 @@ a {
   border-radius: 8px;
   font-family: 'Economica', cursive;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 24px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
   cursor: pointer;
@@ -140,48 +140,54 @@ a {
 
 /* ------------------LOGIN---------------------- */
 
+.App-login {
+  background-image: url('./components/assets/loginbck.jpg');
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .login-header {
   /* background-image: -webkit-linear-gradient(top left, rgb(0,30,40) 25%, rgb(0,80,100)  50%, rgb(0,30,40) 70%); */
   /* background-color: #001133; */
-  background-image: -webkit-linear-gradient(top right,rgb(0,30,40) 25%, rgb(0,80,120)  60%, rgb(0,30,40) 70%);
+  /* background-image: -webkit-linear-gradient(top right,rgb(0,30,40) 25%, rgb(0,80,120)  60%, rgb(0,30,40) 70%);
   color:transparent;
   -webkit-background-clip: text;
-  background-clip: text;
+  background-clip: text; */
   /* padding: 20px; */
+  color: white;
   /* padding-left: 50px; */
   position: absolute;
-  bottom: 30px;
+  top: 30px;
   right: 30px;
   text-align: right;
 }
 
 .login-title {
-  background-image: -webkit-linear-gradient(top right,rgb(0,30,40) 25%, rgb(0,80,120)  60%, rgb(0,30,40) 70%);
-  color:transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
+  /* background-image: -webkit-linear-gradient(top right,rgb(0,30,40) 25%, rgb(0,80,120)  60%, rgb(0,30,40) 70%); */
+  color: white;
+  /* -webkit-background-clip: text;
+  background-clip: text; */
   padding: 50px;
   text-align: left;
-  font-size: 3em;
+  font-size: 4em;
   font-family: 'Economica', sans-serif;
 }
 
 .login-title a {
-  background-image: -webkit-linear-gradient(top right,rgb(0,30,40) 25%, rgb(0,80,120)  60%, rgb(0,30,40) 70%);
-  color:transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
+  /* background-image: -webkit-linear-gradient(top right,rgb(0,30,40) 25%, rgb(0,80,120)  60%, rgb(0,30,40) 70%); */
+  color:white;
 }
 
 .login-container {
   align-content: center;
 text-align: center;  /* width: 300px; */
-  background: white;
-  margin-bottom: 50px;
+  /* background: white; */
   padding: 50px;
   text-align: center;
   height: 100%;
-  margin: 50px;
+  margin: auto;
+  border: 2px solid yellow;
 }
 
 .reg-container {
@@ -190,8 +196,10 @@ text-align: center;  /* width: 300px; */
   flex-direction: column;
   justify-content: center;
 align-items: center;
+padding: 50px;
 font-family: sans-serif;
 font-size: 12px;
+display: inline-block;
 }
 
 .small-button {
@@ -214,8 +222,22 @@ font-size: 12px;
 }
 
 .align-input-fields {
-  display: inline-block;
-    text-align: right;
+  display: left;
+    text-align: left;
+    color: #666666;
+}
+
+.align-input-fields input {
+  margin-left: 5px;
+  border: none;
+  box-shadow: 1px 1px 3px 1px grey;
+  /* transform: scale(1.2); */
+}
+.align-input-fields textarea {
+  margin-left: 5px;
+  border: none;
+  box-shadow: 1px 1px 3px 1px grey;
+  /* transform: scale(1.2); */
 }
 
 /* ------------------DASHBOARD-------------------- */
@@ -381,4 +403,9 @@ main {
 .Viewer img {
   background-color: #eeeeee;
   padding: 10px;
+}
+#entry-delete {
+  color: blue;
+  cursor: pointer;
+  font-family: sans-serif;
 }

@@ -30,24 +30,20 @@ class UserEdit extends Component {
             })
     }
 
-    
-
     render() {
         return (
-            <div className="Viewer">
+            <div className="reg-container">
                
     
-                Update your deets below
+                Update your deets below<br/><br/>
                     
                     <div className="align-input-fields">
-                    <form>
-                    FIRST NAME &emsp; <input placeholder={this.props.user.firstName} onChange={event=>{this.setState({a: event.target.value})}}/><br/><br/>
-                    LAST NAME &emsp; <input placeholder={this.props.user.lastName} onChange={event=>{this.setState({b: event.target.value})}}/><br/><br/>
-                    CITY &emsp; <input placeholder={this.props.user.city} onChange={event=>{this.setState({c: event.target.value})}}/><br/><br/>
-                    COUNTRY &emsp; <input placeholder={this.props.user.country} onChange={event=>{this.setState({d: event.target.value})}}/><br/><br/>
-                    EMAIL &emsp; <input type="email" placeholder={this.props.user.email}  onChange={event=>{this.setState({e: event.target.value})}}/><br/><br/>
-                    PASSWORD &emsp; <input type="password"  onChange={event=>{this.setState({f: event.target.value})}}/> <br/><br/>     
-                    </form>       
+                    FIRST NAME <br/><input placeholder={this.props.user.firstName} onChange={event=>{this.setState({a: event.target.value})}}/><br/><br/>
+                    LAST NAME <br/><input placeholder={this.props.user.lastName} onChange={event=>{this.setState({b: event.target.value})}}/><br/><br/>
+                    CITY <br/><input placeholder={this.props.user.city} onChange={event=>{this.setState({c: event.target.value})}}/><br/><br/>
+                    COUNTRY <br/><input placeholder={this.props.user.country} onChange={event=>{this.setState({d: event.target.value})}}/><br/><br/>
+                    EMAIL <br/><input type="email" placeholder={this.props.user.email}  onChange={event=>{this.setState({e: event.target.value})}}/><br/><br/>
+                    PASSWORD <br/><input type="password"  onChange={event=>{this.setState({f: event.target.value})}}/>   
                     </div>
                     <br/><br/>
                     <div>

@@ -21,8 +21,9 @@ module.exports = {
         const dbInstance = req.app.get('db')
         dbInstance.update_entry([req.params.eid,req.body.title,req.body.type,req.body.journal,req.body.location,req.body.year]).then(entry=> res.status(200).send()).catch(error=>{console.error(error);res.status(500).send(err)})
         },
-    // delete: (req, res, next) => {
-    //     const dbInstance = req.app.get('db')
-    //     dbInstance.delete_entry([req.params.id]).then(entry=> res.status(200).send()).catch(error=>{console.error(error);res.status(500).send(err)})
-    //     }
+    delete: (req, res, next) => {
+        const dbInstance = req.app.get('db')
+        console.log('entry delete eid',req.params.eid)
+        dbInstance.delete_entry([req.params.id]).then(resp=> res.status(200).send(resp)).catch(error=>{console.error(error);res.status(500).send(err)})
+        }
 }

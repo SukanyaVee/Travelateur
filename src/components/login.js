@@ -52,7 +52,7 @@ class Login extends Component {
 
     render() {
         return (
-            <div className="dashboard">
+            <div className="App-login">
                 
                 <div className="login-container">
                     
@@ -60,25 +60,26 @@ class Login extends Component {
                 <div className="reg-container">
                     
                     <div className="align-input-fields">
-                    EMAIL &emsp; <input type="email" onChange={event=>{this.setState({e: event.target.value})}}/><br/><br/>
-                    PASSWORD &emsp; <input type="password" onChange={event=>{this.setState({f: event.target.value})}}/> 
+                    EMAIL <br/> <input type="email" onChange={event=>{this.setState({e: event.target.value})}}/><br/><br/>
+                    PASSWORD <br/><input type="password" onChange={event=>{this.setState({f: event.target.value})}}/> 
                     </div>
                     <br/><br/>
                     <div>
                         <button className="big-button" onClick={event=>this.login(this.state.e, this.state.f) }>Submit</button> 
-                        <button class="small-button" onClick={event=>{this.setState({registered: false})}}>Register first</button>
+                        <button className="small-button" onClick={event=>{this.setState({registered: false})}}>Register first</button>
                     </div>
                 </div>
                 :
                 <div className="reg-container">
                     
                     <div className="align-input-fields">
-                    FIRST NAME &emsp; <input onChange={event=>{this.setState({a: event.target.value})}}/><br/><br/>
-                    LAST NAME &emsp; <input onChange={event=>{this.setState({b: event.target.value})}}/><br/><br/>
-                    CITY &emsp; <input onChange={event=>{this.setState({c: event.target.value})}}/><br/><br/>
-                    COUNTRY &emsp; <input onChange={event=>{this.setState({d: event.target.value})}}/><br/><br/>
-                    EMAIL &emsp; <input type="email" onChange={event=>{this.setState({e: event.target.value})}}/><br/><br/>
-                    PASSWORD &emsp; <input  type="password" onChange={event=>{this.setState({f: event.target.value})}}/>            
+                    WELCOME<br/><br/>
+                    FIRST NAME <br/><input onChange={event=>{this.setState({a: event.target.value})}}/><br/><br/>
+                    LAST NAME <br/> <input onChange={event=>{this.setState({b: event.target.value})}}/><br/><br/>
+                    CITY <br/> <input onChange={event=>{this.setState({c: event.target.value})}}/><br/><br/>
+                    COUNTRY <br/> <input onChange={event=>{this.setState({d: event.target.value})}}/><br/><br/>
+                    EMAIL <br/> <input type="email" onChange={event=>{this.setState({e: event.target.value})}}/><br/><br/>
+                    PASSWORD <br/> <input  type="password" onChange={event=>{this.setState({f: event.target.value})}}/>            
                     </div>
                     <br/><br/>
                     <div>
