@@ -7,6 +7,8 @@ import userI from './assets/user-icon.png';
 import connectI from './assets/connect-icon.png';
 import logoutI from './assets/logout-icon.png';
 import menuI from './assets/menu-icon.png';
+import inspireI from './assets/inspire-icon.png'
+
 import {login} from '../ducks/reducer';
 
 import Gallery from './Gallery'
@@ -14,6 +16,7 @@ import AddEntry from './AddEntry';
 import UserEdit from './UserEdit';
 import Viewer from './Viewer';
 import Connect from './Connect';
+import Inspire from './Inspire';
 
 
 class Dashboard extends Component {
@@ -78,12 +81,14 @@ class Dashboard extends Component {
                     <Route path='/dashboard/addentry/:type' component={AddEntry}/>
                     <Route path='/dashboard/viewer/:eid' component={Viewer}/>
                     <Route path="/dashboard/connect" component={Connect}/>
+                    <Route path="/dashboard/inspire" component={Inspire}/>
                 </main>
                 <aside className="all-header">
                     <div className="all-title"><Link to="/dashboard/gallery"><b>travel</b>ateur</Link></div>
                     <div className="user-box">
                     <Link to='/dashboard/useredit'><img src={userI} alt="user edit" className="icon" width="30"/></Link>
-                    <Link to='/dashboard/connect'><img src={connectI} alt="connect" className="icon"  width="30"/></Link>
+                    <Link to='/dashboard/connect'><img src={connectI} alt="connect with others" className="icon"  width="30"/></Link>
+                    <Link to='/dashboard/inspire'><img src={inspireI} alt="Inspiration" className="icon"  width="30"/></Link>
                     <img src={logoutI} width="30"  alt ="logout" className="icon" onClick={this.logout}/>
                     {/* <button className="small-button">Logout</button> */}
                     {/* <button className="big-button">Social</button> */}

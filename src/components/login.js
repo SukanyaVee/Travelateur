@@ -60,8 +60,8 @@ class Login extends Component {
                 <div className="reg-container">
                     
                     <div className="align-input-fields">
-                    EMAIL <br/> <input type="email" onChange={event=>{this.setState({e: event.target.value})}}/><br/><br/>
-                    PASSWORD <br/><input type="password" onChange={event=>{this.setState({f: event.target.value})}}/> 
+                    EMAIL <br/> <input type="email" onChange={event=>{this.setState({e: event.target.value})}} required /><br/><br/>
+                    PASSWORD <br/><input type="password" onChange={event=>{this.setState({f: event.target.value})}} required /> 
                     </div>
                     <br/><br/>
                     <div>

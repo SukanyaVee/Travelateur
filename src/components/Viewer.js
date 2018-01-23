@@ -4,9 +4,6 @@ import axios from 'axios';
 import {Link} from 'react-router-dom';
 // import {connect} from 'react-redux';
 
-import Gallery from './Gallery'
-import AddEntry from './AddEntry';
-import UserEdit from './UserEdit';
 
 
 export default class Viewer extends Component {
@@ -40,22 +37,15 @@ export default class Viewer extends Component {
                 <h1>{this.state.entry.title}</h1>
                 <h3>{this.state.entry.location}, {this.state.entry.year}</h3>
                     {this.state.entry.type==="photo"? 
-                    <img src={this.state.entry.image}/>
+                    <div id="bigger-image"><img src={this.state.entry.image} alt={this.state.entry.title}/></div>
                 : <p>{this.state.entry.journal}</p>}
-
-                <Link to="/dashboard/gallery">Close</Link>
+                <div id="close-delete">
+                    <div id="entry-delete"><Link to="/dashboard/gallery">Close</Link></div>
+                    <div id="entry-delete" onClick={event=>{
+                    axios.delete(`/api/travelateur/entries/${this.state.entry.eid}`).then(res=>{console.log('deleted');this.props.history.push('/dashboard/gallery')}).catch(err=>{console.log(err)})}
+                    }><b>delete this entry</b></div>
+                </div>
             </div>
         )
     }
 }
-
-// const mapStateToProps = state => {
-//     return {
-//       user: state.user
-//     }
-//   }
-//   const mapDispatchToProps = {
-//     login: login
-//   }
-
-// export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

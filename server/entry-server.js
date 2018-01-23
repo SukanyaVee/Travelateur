@@ -24,6 +24,6 @@ module.exports = {
     delete: (req, res, next) => {
         const dbInstance = req.app.get('db')
         console.log('entry delete eid',req.params.eid)
-        dbInstance.delete_entry([req.params.id]).then(resp=> res.status(200).send(resp)).catch(error=>{console.error(error);res.status(500).send(err)})
+        dbInstance.delete_entry([req.params.eid]).then(resp=> res.status(200).send(resp)).catch(error=>{console.error(error);res.status(500).send(err)})
         }
 }

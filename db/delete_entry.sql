@@ -1,1 +1,1 @@
-DELETE FROM travelateur_entries WHERE eid IS $1 RETURNING *;
+DELETE FROM travelateur_entries WHERE eid = $1 RETURNING *;

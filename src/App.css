@@ -187,16 +187,15 @@ text-align: center;  /* width: 300px; */
   text-align: center;
   height: 100%;
   margin: auto;
-  border: 2px solid yellow;
 }
 
 .reg-container {
-  background: white;
+  background: #eeeeee;
   display: flex;
   flex-direction: column;
   justify-content: center;
 align-items: center;
-padding: 50px;
+padding: 20px;
 font-family: sans-serif;
 font-size: 12px;
 display: inline-block;
@@ -231,6 +230,7 @@ display: inline-block;
   margin-left: 5px;
   border: none;
   box-shadow: 1px 1px 3px 1px grey;
+  /* background: #eef0ff; */
   /* transform: scale(1.2); */
 }
 .align-input-fields textarea {
@@ -244,7 +244,7 @@ display: inline-block;
 .dashboard {
   background: white;
   display: flex;
-
+  padding-left: 30px;
 }
 
 main {
@@ -291,8 +291,8 @@ main {
   background: white;
   text-align: left;
   padding-left: 20px;
-  font-size: 3em;
-  font-family: 'Satisfy', cursive;
+  font-size: 2em;
+  font-family: sans-serif;
   color: rgb(100, 100, 100);
   margin: 20px 0 20px 0;
   cursor: default;
@@ -348,8 +348,9 @@ main {
 	/* flex-direction: column; */
 	flex-wrap: wrap;
 	justify-content: flex-start;
-	align-items: baseline;
-	align-content: flex-start;
+	align-items: flex-start;
+  align-content: flex-start;
+  min-width: 960px;
 }
 
 .entry-holder{
@@ -359,6 +360,7 @@ main {
   width: 300px;
   color: black;
   font-family: 'Satisfy', cursive;
+  cursor: default;
 }
 
 .entry-holder:hover {
@@ -367,18 +369,23 @@ main {
   transform: scale(1.1)
 }
 
+.entry-holder a {
+  color: rgb(0,80,120);
+}
+
 .entry-body {
   background-color: white;
   color: #333333;
   font-family: sans-serif;
   font-size: 14px;
-  height: auto;
+  /* max-width: 280px; */
+  max-height:280px;
+  overflow: hidden;
   margin: 10px 0 10px 0;
   }
 
 .entry-body > img {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
   cursor: default;
 }
 
@@ -404,8 +411,28 @@ main {
   background-color: #eeeeee;
   padding: 10px;
 }
+
+#bigger-image {
+  margin: auto;
+  padding: 10px;
+
+}
+#bigger-image img {
+  max-width: 600px;
+}
+
+#close-delete {
+  display: flex;
+  justify-content: space-between;
+}
 #entry-delete {
-  color: blue;
+  color: rgb(0,80,120);
+  cursor: pointer;
+  font-family: sans-serif;
+  background: #cccccc;
+}
+#entry-delete a {
+  color: rgb(0,80,120);
   cursor: pointer;
   font-family: sans-serif;
 }
