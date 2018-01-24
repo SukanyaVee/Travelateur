@@ -14,7 +14,7 @@ a {
 /* ---------------------HOME------------------ */
 .App-home {
   /* background-image: -webkit-linear-gradient(top left,rgb(30,30,50) 25%, rgb(80,130,160)  50%, rgb(30,30,50) 70%); */
-  background-image: url("./components/assets/home.jpg");
+  background-image: url("./components/assets/home1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   /* min-width: 600px; */
@@ -32,7 +32,7 @@ a {
 
 .App-header {
   position: absolute;
-  top: 100px;
+  top: 50px;
   right: 30px;
   display: flex;
   flex-direction: column;
@@ -42,7 +42,7 @@ a {
   padding: 10px;
   /* padding-top: 60px;
   padding-bottom: 60px; */
-  color: white;
+  color: rgb(0,80,120);
 }
 
 .App-title {
@@ -51,7 +51,7 @@ a {
   font-family: 'Economica', sans-serif;
   text-shadow: 2px 2px grey;
   cursor: default;
-  margin: 20px;
+  margin: 10px;
 }
 /*
 .App-intro {
@@ -70,19 +70,19 @@ a {
   align-items: center;
   font-family: 'Satisfy', cursive;
   font-size: 2em;
-  margin: 20px;
+  margin: 10px;
 }
 
-.photo-banner {
+/* .photo-banner {
   min-width: 500px;
-  /* max-height: 500px; */
+  max-height: 500px;
   z-index: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-}
+} */
 
-.photo-banner>img {
+/* .photo-banner>img {
   max-width: 300px;
   max-height: 350px;
   width: 100%;
@@ -94,26 +94,26 @@ a {
   border-right: #cccccc solid 10px;
   border-left: #cccccc solid 10px;  
   /* opacity: 0.5; */
-}
+/* } */
 
 .photo-banner>img:hover {
   box-shadow: 5px 10px 10px grey;
   border-color: white;
-}
+} */
 
 .text-banner {
-  transform: rotate(-.02turn);
+  /* transform: rotate(-.02turn); */
   /* position: relative;
   bottom: -50px;
   right: 10%; */
-  font-family: 'Satisfy';
+  /* font-family: 'Satisfy';
   padding: 20px;
   font-size: 4em;
-  color: #f0f0f0;
+  color: #f0f0f0; */
   /* text-shadow: 2px -2px grey; */
-  display: inline-block;
+  /* display: inline-block;
   margin: 20px;
-  cursor: default;
+  cursor: default; */
 }
 
 .login-home-button {
@@ -122,18 +122,19 @@ a {
   -webkit-border-radius: 8;
   border-radius: 8px;
   font-family: 'Economica', cursive;
-  color: #ffffff;
-  font-size: 24px;
-  padding: 10px 20px 10px 20px;
+  color: #ff6040;
+  font-size: 1em;
+  padding: 10px;
   text-decoration: none;
   cursor: pointer;
+  border: none;
 }
 
 .home-footer {
   font-family: 'Economica';
-  font-size: 12px;
-  color: white;
-  text-align: right;
+  font-size: 10px;
+  color: grey;
+  text-align: left;
   padding: 10px;
   cursor: default;
 }
@@ -196,7 +197,7 @@ text-align: center;  /* width: 300px; */
   justify-content: center;
 align-items: center;
 padding: 20px;
-font-family: sans-serif;
+font-family: 'Trebuchet MS', sans-serif;
 font-size: 12px;
 display: inline-block;
 }
@@ -212,9 +213,9 @@ display: inline-block;
   /* -webkit-border-radius: 8;
   -moz-border-radius: 8;
   border-radius: 8px; */
-  font-family: Arial;
+  font-family: 'Trebuchet MS', sans-serif;
   color: #ffffff;
-  font-size: 16px;
+  font-size: 14px;
   padding: 5px;
   /* border:none; */
   border-radius: 8px;
@@ -228,15 +229,19 @@ display: inline-block;
 
 .align-input-fields input {
   margin-left: 5px;
+  padding: 5px;
   border: none;
-  box-shadow: 1px 1px 3px 1px grey;
+  box-shadow: 1px 1px 1px 1px grey;
+  font-family: 'Trebuchet MS', sans-serif;
   /* background: #eef0ff; */
   /* transform: scale(1.2); */
 }
 .align-input-fields textarea {
   margin-left: 5px;
+  padding: 5px;
   border: none;
   box-shadow: 1px 1px 3px 1px grey;
+  font-family: 'Trebuchet MS', sans-serif
   /* transform: scale(1.2); */
 }
 
@@ -267,7 +272,7 @@ main {
 }
 
 .all-title {
-  background-image: -webkit-linear-gradient(top right,rgb(0,30,40) 25%, rgb(0,80,120)  60%, rgb(0,30,40) 70%);
+  background-image: -webkit-linear-gradient(top right,rgb(0,80,120) 25%, rgb(0,40,50)  60%, rgb(0,80,120) 70%);
   color:transparent;
   -webkit-background-clip: text;
   background-clip: text;
@@ -281,18 +286,19 @@ main {
 }
 
 .all-title a {
-  background-image: -webkit-linear-gradient(top right,rgb(0,30,40) 25%, rgb(0,80,120)  60%, rgb(0,30,40) 70%);
+  /* background-image: -webkit-linear-gradient(top right,rgb(0,80,120) 25%, rgb(0,40,50)  60%, rgb(0,80,120) 70%);
   color:transparent;
   -webkit-background-clip: text;
-  background-clip: text;
+  background-clip: text; */
+  color: #005078;
 }
 
 .dash-greeting {
   background: white;
   text-align: left;
   padding-left: 20px;
-  font-size: 2em;
-  font-family: sans-serif;
+  font-size: 1.6em;
+  font-family: 'Trebuchet MS', sans-serif;
   color: rgb(100, 100, 100);
   margin: 20px 0 20px 0;
   cursor: default;
@@ -335,9 +341,9 @@ main {
   -webkit-border-radius: 8;
   -moz-border-radius: 8;
   border-radius: 8px;
-  font-family: Arial;
+  font-family: 'Trebuchet MS', sans-serif;
   color: #ffffff;
-  font-size: 16px;
+  font-size: 14px;
   padding: 5px;
   text-decoration: none;
 }
@@ -361,6 +367,7 @@ main {
   color: black;
   font-family: 'Satisfy', cursive;
   cursor: default;
+  box-shadow: 1px 1px 3px grey;
 }
 
 .entry-holder:hover {
@@ -370,16 +377,18 @@ main {
 }
 
 .entry-holder a {
-  color: rgb(0,80,120);
+  color: #ff6040 ;
+  /* font-family: sans-serif; */
+  font-size: 10px;
 }
 
 .entry-body {
   background-color: white;
   color: #333333;
-  font-family: sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
   font-size: 14px;
-  /* max-width: 280px; */
-  max-height:280px;
+  /* max-width: 250px; */
+  max-height:200px;
   overflow: hidden;
   margin: 10px 0 10px 0;
   }
@@ -397,15 +406,19 @@ main {
 /* ------------------------VIEWER------------------------------- */
 .Viewer {
   margin: 30px;
+  max-width: 900px;
+  padding-right: 30px;
 }
 .Viewer h1{
   font-family: 'Economica', sans-serif;
+  color: rgb(0,80,120);
 }
 .Viewer h3{
   font-family: 'Satisfy', cursive;
+  color: #ff6040;
 }
 .Viewer p{
-  font-family: sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
 }
 .Viewer img {
   background-color: #eeeeee;
@@ -428,11 +441,11 @@ main {
 #entry-delete {
   color: rgb(0,80,120);
   cursor: pointer;
-  font-family: sans-serif;
+  font-family: 'Trebuchet MS',  sans-serif;
   background: #cccccc;
 }
 #entry-delete a {
   color: rgb(0,80,120);
   cursor: pointer;
-  font-family: sans-serif;
+  font-family: 'Trebuchet MS', sans-serif;
 }

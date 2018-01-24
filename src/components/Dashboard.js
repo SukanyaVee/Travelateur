@@ -30,18 +30,26 @@ class Dashboard extends Component {
     
 
     componentDidMount(){
-        axios.get('/api/travelateur/users').catch(error=>{
+        axios.get('/api/travelateur/users').then(res=>{
+            this.props.login(res.data);
+            axios.get(`/api/travelateur/entries/get?uid=${this.props.user.uid}`).then(resp=>{
+                this.setState({
+                    entries: resp.data
+                   })
+                   console.log(this.state.entries)
+                }).catch(error=>console.log(error))
+        }).catch(error=>{
             console.log('session does not exist', this.state.isLoggedIn);
             this.setState({entries: []})
             this.props.history.push('/login')
         })
 
-        axios.get(`/api/travelateur/entries/get?uid=${this.props.user.uid}`).then(resp=>{
-        this.setState({
-            entries: resp.data
-           })
-           console.log(this.state.entries)
-        }).catch(error=>console.log(error))
+        // axios.get(`/api/travelateur/entries/get?uid=${this.props.user.uid}`).then(resp=>{
+        // this.setState({
+        //     entries: resp.data
+        //    })
+        //    console.log(this.state.entries)
+        // }).catch(error=>console.log(error))
         
   
     }

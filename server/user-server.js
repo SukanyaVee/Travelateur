@@ -74,10 +74,10 @@ module.exports = {
     connect: (req, res, next) => {
         console.log('connect country',req.query.country)
         const dbInstance = req.app.get('db') 
-        dbInstance.connect([req.query.uid]).then(entry=> res.status(200).send(entry)).catch(error=>{console.error(error);res.status(500).send(err)})
+        dbInstance.connect([req.query.country]).then(entry=> {console.log(entry);res.status(200).send(entry)}).catch(error=>{console.error(error);res.status(500).send(err)})
     },
     sessionCheck: (req, res, next) => {
-        req.session.user ? res.status(200).send() : res.status(500).send()
+        req.session.user ? res.status(200).send(req.session.user) : res.status(500).send()
     },
     logout: (req, res, next) => {
         if (req.session.user)

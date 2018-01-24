@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-// import ConnectViewer from 
+import ConnectViewer from './ConnectViewer';
 
 
 
@@ -18,8 +18,8 @@ export default class Connect extends Component {
         };
     
 
-    connect(){
-        axios.get(`/api/travelateur/users/connect?country=${this.state.country}`).then(resp=>{
+    connect(country){
+        axios.get(`/api/travelateur/users/connect?country=${country}`).then(resp=>{
         this.setState({
             entries: resp.data
            })
@@ -27,19 +27,24 @@ export default class Connect extends Component {
         }).catch(error=>console.log(error))
         
     }
-
+ 
     
 
     render() {
 
         return (
-            <div className="Viewer">
-                <div>
-                    Where are you looking for connections? &nbsp;&nbsp;&nbsp;
+            <div>
+                <div className="Viewer">
+                    <h1>Where are you going next?</h1><br/>
+                    <h3>Get advice on your favorite destinations from other Travelateur users </h3>
                     <input type="text" placeholder="country" onChange={e=>{this.setState({country: e.target.value})}}/>
-                    <button onClick={this.connect}>Find Friends!</button>
+                    <button class="big-button" onClick={e=>this.connect(this.state.country)}>Find Friends!</button>
                 </div>
-                {/* {this.state.entries.map(row=>{<ConnectViewer row={row}/>})} */}
+                <div className="gallery-container">
+                {this.state.entries.map(row=><ConnectViewer row={row}/>)}
+                </div>
+                                {/* <div id="entry-delete"><Link to="/dashboard/gallery"><small> Back to Dashboard</small></Link></div> */}
+
             </div>
         )
     }

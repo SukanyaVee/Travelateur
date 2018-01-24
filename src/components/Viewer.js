@@ -43,7 +43,7 @@ export default class Viewer extends Component {
                     <div id="entry-delete"><Link to="/dashboard/gallery">Close</Link></div>
                     <div id="entry-delete" onClick={event=>{
                     axios.delete(`/api/travelateur/entries/${this.state.entry.eid}`).then(res=>{console.log('deleted');this.props.history.push('/dashboard/gallery')}).catch(err=>{console.log(err)})}
-                    }><b>delete this entry</b></div>
+                    }>delete this entry</div>
                 </div>
             </div>
         )

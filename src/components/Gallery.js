@@ -22,3 +22,4 @@ export default class Gallery extends Component {
     }
 }
 
+ 

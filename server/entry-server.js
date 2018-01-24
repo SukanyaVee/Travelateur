@@ -19,7 +19,7 @@ module.exports = {
         },
     update:(req, res, next) => {
         const dbInstance = req.app.get('db')
-        dbInstance.update_entry([req.params.eid,req.body.title,req.body.type,req.body.journal,req.body.location,req.body.year]).then(entry=> res.status(200).send()).catch(error=>{console.error(error);res.status(500).send(err)})
+        dbInstance.update_entry([req.params.eid,req.body.title,req.body.type,req.body.image,req.body.location,req.body.year]).then(entry=> res.status(200).send()).catch(error=>{console.error(error);res.status(500).send(err)})
         },
     delete: (req, res, next) => {
         const dbInstance = req.app.get('db')

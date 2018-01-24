@@ -15,8 +15,8 @@ class Home extends Component {
     return (
       <div className="App-home">
         <footer className="home-footer">
-          Sukanya Vijayakumar @DevMountain Full Stack Immersive Personal Project
-        </footer>
+          Sukanya Vijayakumar @DevMountain Full Stack Immersive Personal Project<br/>
+          Photo by 'yonatan anugerah' on Unsplash        </footer>
         <header className="App-header">
           <div className="App-title"><b><b>travel</b></b>ateur</div>
           <div className="login-box">
