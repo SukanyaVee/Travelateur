@@ -36,9 +36,11 @@ export default class Viewer extends Component {
             <div className="Viewer">
                 <h1>{this.state.entry.title}</h1>
                 <h3>{this.state.entry.location}, {this.state.entry.year}</h3>
+                <div id="mob123">{this.state.entry.location}<br/> {this.state.entry.year}</div>
                     {this.state.entry.type==="photo"? 
                     <div id="bigger-image"><img src={this.state.entry.image} alt={this.state.entry.title}/></div>
                 : <p>{this.state.entry.journal}</p>}
+                <br/>
                 <div id="close-delete">
                     <div id="entry-delete"><Link to="/dashboard/gallery">Close</Link></div>
                     <div id="entry-delete" onClick={event=>{

@@ -44,7 +44,7 @@ export default class Connect extends Component {
                 <div>
                     <h1>Where are you going next?</h1>
                     <h3>Get advice on your favorite destinations from other Travelateur users </h3>
-                    <input type="text" placeholder="country" onChange={e=>{this.setState({country: e.target.value})}}/>
+                    <input type="text" placeholder="country" onChange={e=>{this.setState({country: e.target.value})}}/><span className="white-space"></span>
                     <button class="big-button" onClick={e=>this.connect(this.state.country)}>Find</button>
                 </div>
                 <div className="connect-container">
