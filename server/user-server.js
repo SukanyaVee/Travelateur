@@ -16,6 +16,7 @@ module.exports = {
                     country: user[0].country,
                     email: user[0].email, 
                     password: user[0].password,
+                    pic: user[0].pic
                 };
                 console.log('req.session', req.session.user)
                 res.status(200).json({user: req.session.user}); 
@@ -41,7 +42,8 @@ module.exports = {
                             email: user[0].email, 
                             password: user[0].password,
                             city: user[0].city,
-                            country: user[0].country
+                            country: user[0].country,
+                            pic: user[0].pic
                         }}
                     else {
                         res.status(403).json({ message: 'Invalid password' });
@@ -55,7 +57,7 @@ module.exports = {
         const dbInstance = req.app.get('db')
         console.log(req.body)
         bcrypt.hash(req.body.password, saltRounds).then(hashedPassword => {
-            dbInstance.edit_user([req.params.id,req.body.firstName,req.body.lastName,req.body.city,req.body.country,req.body.email,hashedPassword]).then(user=> {
+            dbInstance.edit_user([req.params.id,req.body.firstName,req.body.lastName,req.body.city,req.body.country,req.body.email,hashedPassword,req.body.pic]).then(user=> {
                 console.log(hashedPassword)
                 req.session.user={
                     uid: user[0].uid,
@@ -65,6 +67,7 @@ module.exports = {
                     country: user[0].country,
                     email: user[0].email, 
                     password: user[0].password,
+                    pic: user[0].pic
                 }
                 console.log('req.session', req.session.user)
                 res.status(200).json({user: req.session.user});             
@@ -74,7 +77,7 @@ module.exports = {
     connect: (req, res, next) => {
         console.log('connect country',req.query.country)
         const dbInstance = req.app.get('db') 
-        dbInstance.connect([req.query.country]).then(entry=> {console.log(entry);res.status(200).send(entry)}).catch(error=>{console.error(error);res.status(500).send(err)})
+        dbInstance.connect([req.query.country]).then(entry=> {;res.status(200).send(entry)}).catch(error=>{console.error(error);res.status(500).send(err)})
     },
     sessionCheck: (req, res, next) => {
         req.session.user ? res.status(200).send(req.session.user) : res.status(500).send()

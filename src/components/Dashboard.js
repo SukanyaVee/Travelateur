@@ -82,7 +82,7 @@ class Dashboard extends Component {
                 <main>
                 
                 <div className="dash-greeting">
-                    Hi {user.firstName} {user.lastName}!
+                    <div className="prof-pic-small"><img src={user.pic} alt=""/></div> Hi {user.firstName} {user.lastName}!
                 </div>
                     <Route path='/dashboard/gallery' render={()=><Gallery  entries={this.state.entries}/>}/>
                     <Route path="/dashboard/useredit" component={UserEdit}/>
@@ -94,12 +94,10 @@ class Dashboard extends Component {
                 <aside className="all-header">
                     <div className="all-title"><Link to="/dashboard/gallery"><b>travel</b>ateur</Link></div>
                     <div className="user-box">
-                    <Link to='/dashboard/useredit'><img src={userI} alt="user edit" className="icon" width="30"/></Link>
                     <Link to='/dashboard/connect'><img src={connectI} alt="connect with others" className="icon"  width="30"/></Link>
                     <Link to='/dashboard/inspire'><img src={inspireI} alt="Inspiration" className="icon"  width="30"/></Link>
+                    <Link to='/dashboard/useredit'><img src={userI} alt="user edit" className="icon" width="30"/></Link>
                     <img src={logoutI} width="30"  alt ="logout" className="icon" onClick={this.logout}/>
-                    {/* <button className="small-button">Logout</button> */}
-                    {/* <button className="big-button">Social</button> */}
                     </div> 
                 </aside>
             </div>

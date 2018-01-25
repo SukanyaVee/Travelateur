@@ -27,9 +27,9 @@ export default class Inspire extends Component {
     render() {
 
         return (
-            <div className="Viewer">
+            <div>
             <h1>Inspiration Board</h1>
-            <h3>A dash of mysticism and a pinch of charm</h3>
+            <h3>Not until we are lost do we begin to understand ourselves... - Thoreau</h3>
             <div className="gallery-container">
                     {this.state.items.map(item=><InspireItem key={item.id} item={item}/>)}
             </div>

@@ -5,9 +5,12 @@ const massive = require('massive');
 const session = require('express-session')
 const user = require('./user-server');
 const entry = require('./entry-server');
+const google = require('./google');
+
+const axios = require('axios');
 const bcrypt = require('bcrypt');
 const AWS = require('aws-sdk');
-require('dotenv').config()
+require('dotenv').config();
 
 massive(process.env.CONNECTION_STRING).then(dbInstance=>{
     app.set('db', dbInstance);
@@ -72,3 +75,6 @@ app.delete(`${entryAPIurl}/:eid`, entry.delete);
 
 
 app.listen(process.env.SERVER_PORT, ()=>console.log('listening on port ' + process.env.SERVER_PORT));
+
+// -----------------API calls-----------------
+app.get('/api/travelateur/google/:country', google.get)

@@ -249,7 +249,7 @@ display: inline-block;
 .dashboard {
   background: white;
   display: flex;
-  padding-left: 30px;
+  padding-left: 50px;
 }
 
 main {
@@ -301,7 +301,10 @@ main {
   font-family: 'Trebuchet MS', sans-serif;
   color: rgb(100, 100, 100);
   margin: 20px 0 20px 0;
-  cursor: default;
+  cursor: default; 
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .user-box{
@@ -341,7 +344,7 @@ main {
   -webkit-border-radius: 8;
   -moz-border-radius: 8;
   border-radius: 8px;
-  font-family: 'Trebuchet MS', sans-serif;
+  font-family: 'Lucida Sans Unicode',  Verdana, sans-serif;
   color: #ffffff;
   font-size: 14px;
   padding: 5px;
@@ -356,7 +359,7 @@ main {
 	justify-content: flex-start;
 	align-items: flex-start;
   align-content: flex-start;
-  min-width: 960px;
+  /* min-width: 960px; */
 }
 
 .entry-holder{
@@ -390,7 +393,7 @@ main {
   /* max-width: 250px; */
   max-height:200px;
   overflow: hidden;
-  margin: 10px 0 10px 0;
+  margin: 10px 0 20px 0;
   }
 
 .entry-body > img {
@@ -398,22 +401,18 @@ main {
   cursor: default;
 }
 
-/* -------------------ADD ENTRY PAGE ------------------------- */
-#journal-textbox {
-  width: 300px;
-  height: 200px;
-}
+
 /* ------------------------VIEWER------------------------------- */
 .Viewer {
   margin: 30px;
   max-width: 900px;
   padding-right: 30px;
 }
-.Viewer h1{
+ h1{
   font-family: 'Economica', sans-serif;
-  color: rgb(0,80,120);
+  color: rgb(0,80,120); 
 }
-.Viewer h3{
+ h3{
   font-family: 'Satisfy', cursive;
   color: #ff6040;
 }
@@ -448,4 +447,92 @@ main {
   color: rgb(0,80,120);
   cursor: pointer;
   font-family: 'Trebuchet MS', sans-serif;
+}
+
+
+/* -------------------ADD ENTRY PAGE ------------------------- */
+#journal-textbox {
+  width: 300px;
+  height: 200px;
+}
+/* --------------------------USER EDIT----------------------------*/
+.user-edit-page {
+  display: flex;
+  justify-content: flex-start; 
+}
+  .prof-pic-big {
+  border: 10px solid #eeeeee;
+  width: 200px;
+  max-height: max-content;
+  overflow: hidden;
+  margin-left: 50px;
+}
+.prof-pic-big img{
+  width: 100%;
+}
+.prof-pic-small {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  display: inline-block;
+  margin-right: 20px;
+}
+.prof-pic-small img{
+  width: 100%;
+}
+#user-deets {
+  display: flex;
+  align-items: center;
+}
+
+/* ----------------CONNECT----------------- */
+.connect-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.connect-sub {
+  flex:3;
+  display: flex;
+	/* flex-direction: column; */
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+  align-content: flex-start;
+}
+
+.google-places {
+  max-width: 300px;
+flex: 1;
+  background-color: rgb(0,80,120);
+  padding: 10px;
+  display: block;
+  color: black;
+  font-family: 'Trebuchet MS', sans-serif;
+ 
+}
+.google-place img {
+  width: 100%;
+}
+.google-place {
+  background: white;
+  padding: 10px;
+  margin-top: 10px;
+}
+.google-place p {
+  font-size: 12px;
+  margin: 0;
+}
+.google-place h5 {
+  margin: 0;
+}
+.google-place h6 {
+  margin: 0;
+  font-style: italic;
+}
+.google-places h3{
+  font-family: 'Satisfy', cursive;
+  color: white;
 }

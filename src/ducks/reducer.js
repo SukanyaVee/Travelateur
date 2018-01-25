@@ -9,7 +9,8 @@ const initialState = {
         city: '',
         Country: '',
         email: '',
-        password: ''
+        password: '',
+        pic: ''
     }
 };
 
