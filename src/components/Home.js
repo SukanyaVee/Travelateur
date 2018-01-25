@@ -21,7 +21,7 @@ class Home extends Component {
           <div className="App-title"><b><b>travel</b></b>ateur</div>
           <div className="login-box">
             {/* <Link to='' className="links"><button className="login-home-button">find inspiration</button></Link> */}
-            <Link to='/login' className="links"><button className="login-home-button"><b>login</b></button></Link>
+            <Link to='/login' className="links"><button className="login-home-button"><b>enter</b></button></Link>
           </div>
         </header>
         

@@ -98,6 +98,16 @@ a {
   cursor: default;
 }
 
+@media (max-width: 420px) {
+  header {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 /* ------------------LOGIN---------------------- */
 
 .App-login {

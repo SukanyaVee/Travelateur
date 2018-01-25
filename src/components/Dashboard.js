@@ -6,7 +6,6 @@ import {connect} from 'react-redux';
 import userI from './assets/user-icon.png';
 import connectI from './assets/connect-icon.png';
 import logoutI from './assets/logout-icon.png';
-import menuI from './assets/menu-icon.png';
 import inspireI from './assets/inspire-icon.png'
 
 import {login} from '../ducks/reducer';
