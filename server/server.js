@@ -74,12 +74,11 @@ app.put(`${entryAPIurl}/:eid`, entry.update); // works - backend only
 app.delete(`${entryAPIurl}/:eid`, entry.delete);
 
 
-app.listen(process.env.SERVER_PORT, ()=>console.log('listening on port ' + process.env.SERVER_PORT));
-
 // -----------------API calls-----------------
-app.get('/api/travelateur/google/:country', google.get)
+app.get('/api/travelateur/google/:country', google.reco)
+app.post('/api/travelateur/googles', google.latlong)
 
-
+app.listen(process.env.SERVER_PORT, ()=>console.log('listening on port ' + process.env.SERVER_PORT));
 
 const path = require('path')
 app.get('*', (req, res)=>{
