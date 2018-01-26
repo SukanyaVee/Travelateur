@@ -313,7 +313,7 @@ display: inline-block;
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-end;
-  font-size: 2em;
+  /* font-size: 2em; */
   font-family: 'Economica', cursive;
   color: rgb(100, 100, 100);
   /* display: flex;
@@ -325,6 +325,8 @@ display: inline-block;
 .user-box img {
   margin: 5px;
   cursor: pointer;
+  width:30px;
+  height: 30px;
 }
 
 .add-box {
@@ -389,8 +391,9 @@ display: inline-block;
 }
 
 .gallery-container:hover .entry-holder:not(:hover) {
-  filter: grayscale(0.7);
-  transform: scale(0.9);
+  filter: grayscale(0.8);
+  transform: scale(0.95);
+  box-shadow: 1px 1px 1px grey;
 }
 
 @media (max-width: 450px) {
@@ -404,9 +407,11 @@ display: inline-block;
     display: none;
   }
   .gallery-container {
-width: 93%  }
+    width: 93%  
+  }
   .all-header {
     justify-content: center;
+    align-items: center;
     width: 100%;
   }
   .all-title {

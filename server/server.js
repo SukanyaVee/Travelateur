@@ -34,7 +34,7 @@ massive(process.env.CONNECTION_STRING).then(dbInstance=>{
 const app=express(); 
 app.use(bodyParser.json());
 app.use(cors());
-
+app.use( express.static( `${__dirname}/../build` ) );
 app.use(session({
     //when do we use key?
     secret: process.env.SESSION_SECRET,
@@ -78,3 +78,10 @@ app.listen(process.env.SERVER_PORT, ()=>console.log('listening on port ' + proce
 
 // -----------------API calls-----------------
 app.get('/api/travelateur/google/:country', google.get)
+
+
+
+const path = require('path')
+app.get('*', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+})

@@ -96,7 +96,7 @@ class Dashboard extends Component {
                     <Link to='/dashboard/connect'><img src={connectI} alt="connect with others" className="icon"  width="30"/></Link>
                     <Link to='/dashboard/inspire'><img src={inspireI} alt="Inspiration" className="icon"  width="30"/></Link>
                     <Link to='/dashboard/useredit'><img src={userI} alt="user edit" className="icon" width="30"/></Link>
-                    <img src={logoutI} width="30"  alt ="logout" className="icon" onClick={this.logout}/>
+                    <a href="javascript:;"><img src={logoutI} width="30"  alt ="logout" className="icon" onClick={this.logout}/></a>
                     </div> 
                 </aside>
             </div>

@@ -12,7 +12,7 @@ export default class GalleryItem extends Component {
                 </div>
                 <b>{this.props.entry.title}</b><br/>
                 {this.props.entry.location}, {this.props.entry.year} 
-\            </div></Link>
+                </div></Link>
         :
         <Link to={`/dashboard/viewer/${this.props.entry.eid}`}><div className="entry-holder">
                 <div className="entry-body">
