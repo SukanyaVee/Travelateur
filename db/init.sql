@@ -24,3 +24,6 @@ CREATE TABLE travelateur_entries (
 
 SELECT * FROM travelateur_entries;
 SELECT * FROM travelateur_users;
+
+ALTER TABLE travelateur_users
+ADD COLUMN pic TEXT;
