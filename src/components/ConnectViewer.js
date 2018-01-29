@@ -1,25 +1,39 @@
-import React from 'react';
+import React, {Component} from 'react';
 // import {Link} from 'react-router-dom';
 
 
-export default function ConnectViewer(props) {
-        return (props.row.type === "photo" ?
+export default class ConnectViewer extends Component {
+    constructor(props) {
+        super()
+        this.state = {
+            isFave: false
+        }
+        this.toggleFave = this.toggleFave.bind(this)
+    }
+
+    toggleFave() {
+        this.state.isFave ? this.setState({isFave: false}) : this.setState({isFave: true})
+    }
+
+    render(props){
+        return (this.props.row.type === "photo" ?
                                 
             <div className="entry-holder">
+            <span className={`fave-${this.state.isFave}`} onClick={e=>this.toggleFave()}></span>
                 <div className="entry-body">
-                    <img src={props.row.image} alt={props.row.title}/> 
+                    <img src={this.props.row.image} alt={this.props.row.title}/> 
                 </div>
-                <div><b>{props.row.title}</b><br/></div>
-                <div id="user-deets"><div className="prof-pic-small"><img src={props.row.pic} alt="owner"/></div>{props.row.firstname} {props.row.lastname}></div>
+                <div><b>{this.props.row.title}</b><br/></div>
+                <div id="user-deets"><div className="prof-pic-small"><img src={this.props.row.pic} alt="owner"/></div>{this.props.row.firstname} {this.props.row.lastname}></div>
             </div>
             :
             <div className="entry-holder">
                 <div className="entry-body">
-                    {props.row.journal.substr(0,400)}
+                    {this.props.row.journal.substr(0,400)}
                 </div>
-                <div><b>{props.row.title}</b><br/></div>
-                <div id="user-deets"><div className="prof-pic-small"><img src={props.row.pic} alt="owner"/></div>{props.row.firstname} {props.row.lastname}</div>
+                <div><b>{this.props.row.title}</b><br/></div>
+                <div id="user-deets"><div className="prof-pic-small"><img src={this.props.row.pic} alt="owner"/></div>{this.props.row.firstname} {this.props.row.lastname}</div>
             </div>
         )
-
+    }
 } 

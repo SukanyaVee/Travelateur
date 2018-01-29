@@ -5,10 +5,16 @@
 @import url('https://fonts.googleapis.com/css?family=Satisfy');
 @import url('https://fonts.googleapis.com/css?family=Lovers+Quarrel');
 
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
 a {
   text-decoration: none;
 }
-
+button {
+  font-size: 10px;
+  padding: 0;
+}
 
 /* ---------------------HOME------------------ */
 .App-home {
@@ -234,7 +240,7 @@ display: inline-block;
 
   .reg-container {
     padding: 5px;
-    transform: scale(1.2);
+    /* transform: scale(1.2); */
     width: 95%;
 
   }
@@ -329,6 +335,7 @@ display: inline-block;
   height: 30px;
 }
 
+
 .add-box {
   padding: 0 20px 0 0;
   display: flex;
@@ -357,6 +364,7 @@ display: inline-block;
   font-family: 'Satisfy', cursive;
   cursor: default;
   box-shadow: 1px 1px 3px grey;
+  position: relative;
 }
 
 .entry-holder:hover {
@@ -430,6 +438,7 @@ display: inline-block;
 
   .entry-holder {
     box-shadow: 1px 1px 0 white;
+  
     
   }
   .entry-holder a {
@@ -550,6 +559,7 @@ display: inline-block;
   .prof-pic-big {
     margin-left: 10px;
     border: 3px solid #eeeeee;
+    display: none;
   }
 }
 
@@ -606,6 +616,36 @@ display: inline-block;
   color: white;
 }
 
+.entry-holder .fave-true {
+  background: #ff6040;
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.entry-holder .fave-false {
+  background: #666666;
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.fave-true:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+.fave-false:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
 @media (max-width: 450px) {
   .google-places {
     display: none;
@@ -617,3 +657,14 @@ display: inline-block;
 }
 
 
+/* CAROUSEL--------------- */
+.whatever {
+  display: flex;
+  justify-content: center;
+}
+
+
+.whatever img {
+  height: 600px;
+  width: auto;
+}

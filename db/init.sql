@@ -27,3 +27,11 @@ SELECT * FROM travelateur_users;
 
 ALTER TABLE travelateur_users
 ADD COLUMN pic TEXT;
+
+CREATE TABLE travelateur_faves (
+    fid SERIAL PRIMARY KEY,
+    fuid INTEGER REFERENCES travelateur_users (uid),
+    feid INTEGER REFERENCES travelateur_entries (eid)
+)
+
+SELECT * FROM travelateur_faves;

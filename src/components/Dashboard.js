@@ -16,6 +16,7 @@ import UserEdit from './UserEdit';
 import Viewer from './Viewer';
 import Connect from './Connect';
 import Inspire from './Inspire';
+import CarouselComp from './CarouselComp';
 
 
 class Dashboard extends Component {
@@ -89,6 +90,7 @@ class Dashboard extends Component {
                     <Route path='/dashboard/viewer/:eid' component={Viewer}/>
                     <Route path="/dashboard/connect" component={Connect}/>
                     <Route path="/dashboard/inspire" component={Inspire}/>
+                    <Route path="/dashboard/carousel" render={()=><CarouselComp entries={this.state.entries}/>}/>
                 </main>
                 <aside className="all-header">
                     <div className="all-title"><Link to="/dashboard/gallery"><b>travel</b>ateur</Link></div>

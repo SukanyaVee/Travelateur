@@ -48,7 +48,7 @@ class AddEntry extends Component {
                 
                 axios.post(`/api/travelateur/googles`, {latitude:latitude, longitude: longitude}).then(resp=>{
                     x=resp.data
-                    var y= x.address_components.findIndex(elem=>elem.types[0]=="country")
+                    var y= x.address_components.findIndex(elem=>elem.types[0]==="country")
                     console.log('country',x.address_components[y].long_name)
                     this.setState({location: x.address_components[y].long_name})
                     output.innerHTML = 'You are at '+ x.formatted_address+' </p>';
