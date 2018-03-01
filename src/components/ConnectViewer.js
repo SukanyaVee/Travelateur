@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-// import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
 
-
-export default class ConnectViewer extends Component {
+class ConnectViewer extends Component {
     constructor(props) {
         super()
         this.state = {
@@ -11,8 +10,20 @@ export default class ConnectViewer extends Component {
         this.toggleFave = this.toggleFave.bind(this)
     }
 
-    toggleFave() {
-        this.state.isFave ? this.setState({isFave: false}) : this.setState({isFave: true})
+    toggleFave(props) {
+        if (this.state.isFave) {
+            axios.delete(`/fave/${this.row}`)
+            .then(res=>{
+                this.setState({isFave: false})
+            })
+            .catch(err=>{console.log(err)})
+        } else {
+            axios.post('/fave', {fuid: this.props.user.uid, feid: this.props.row.eid})
+            .then(res=>{
+                this.setState({isFave: true})
+            })
+            .catch(err=>{console.log(err)})
+        }
     }
 
     render(props){
@@ -28,6 +39,7 @@ export default class ConnectViewer extends Component {
             </div>
             :
             <div className="entry-holder">
+            <span className={`fave-${this.state.isFave}`} onClick={e=>this.toggleFave()}></span>
                 <div className="entry-body">
                     {this.props.row.journal.substr(0,400)}
                 </div>
@@ -37,3 +49,11 @@ export default class ConnectViewer extends Component {
         )
     }
 } 
+
+const mapStateToProps = state => {
+    return {
+      user: state.user
+    }
+}
+
+export default connect(mapStateToProps)(Dashboard);

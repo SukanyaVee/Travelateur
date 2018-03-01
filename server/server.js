@@ -62,7 +62,6 @@ app.post(`${userAPIurl}/login`, user.get); //works - front & back
 app.post(`${userAPIurl}/create`, user.create); //works - front & back
 app.put(`${userAPIurl}/:id`, user.update);  
 app.delete(`${userAPIurl}/logout`, user.logout);
-app.get(`${userAPIurl}/connect`, user.connect);
 
 // -----------------ENTRIES-----------------
 const entryAPIurl = '/api/travelateur/entries'
@@ -72,6 +71,11 @@ app.get(`${entryAPIurl}/get/:eid`, entry.getOne);
 app.post(entryAPIurl, entry.create); //works - backend only
 app.put(`${entryAPIurl}/:eid`, entry.update); // works - backend only
 app.delete(`${entryAPIurl}/:eid`, entry.delete);
+
+//---------------------FAVES & CONNECT-------------
+app.get(`${userAPIurl}/connect`, user.connect);
+app.post(`/fave`, entry.addFave);
+app.delete(`/fave`, entry.removeFave);
 
 
 // -----------------API calls-----------------

@@ -1,0 +1,1 @@
+DELETE FROM travelateur_faves WHERE fid=$1;

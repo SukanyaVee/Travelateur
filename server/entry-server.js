@@ -25,5 +25,15 @@ module.exports = {
         const dbInstance = req.app.get('db')
         console.log('entry delete eid',req.params.eid)
         dbInstance.delete_entry([req.params.eid]).then(resp=> res.status(200).send(resp)).catch(error=>{console.error(error);res.status(500).send(err)})
+        },
+    addFave: (req, res, next) => {
+        const dbInstance = req.app.get('db')
+        console.log('fave add',req.body)
+        dbInstance.add_fave([req.body.fuid, req.body.feid]).then(resp=> res.status(200).send(resp)).catch(error=>{console.error(error);res.status(500).send(err)})
+        },
+    removeFave: (req, res, next) => {
+        const dbInstance = req.app.get('db')
+        console.log('fave delete fid',req.params.fid)
+        dbInstance.delete_fave([req.params.fid]).then(resp=> res.status(200).send(resp)).catch(error=>{console.error(error);res.status(500).send(err)})
         }
 }
