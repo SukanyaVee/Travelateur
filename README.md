@@ -41,4 +41,4 @@ Pinterest style travel inspiration board from unsplash:
 
 Country search that returns user 'pins' as well as google laces results:
 
-![Alt text](/src/components/assets/travel5.png "country search that returns user 'pins' as well as google laces results")
+![Alt text](/src/components/assets/travel5.png "country search that returns user 'pins' as well as Google Places results")
