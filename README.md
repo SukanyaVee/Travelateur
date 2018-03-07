@@ -29,4 +29,4 @@ Dashboard:
 
 ![Alt text](/src/components/assets/travel4.png "Pinterest style travel inspiration board from unsplash")
 
-![Alt text](/src/components/assets/travel5.png "country search that returns user "pins" as well as google laces results")
+![Alt text](/src/components/assets/travel5.png "country search that returns user 'pins' as well as google laces results")
