@@ -20,13 +20,25 @@ Working views
 Below are some screenshots from the working site. 
 
 Sign in page: 
+
 ![Alt text](/src/components/assets/travel1.png "Sign in exncrypted by bcryt-hash")
 
-Dashboard:
+
+Dashboard with user uploads:
+
 ![Alt text](/src/components/assets/travel2.png "Dashboard")
+
+
+User entries using geolocation:
 
 ![Alt text](/src/components/assets/travel3.png "geolocation for photo or note upload")
 
+
+Pinterest style travel inspiration board from unsplash:
+
 ![Alt text](/src/components/assets/travel4.png "Pinterest style travel inspiration board from unsplash")
+
+
+Country search that returns user 'pins' as well as google laces results:
 
 ![Alt text](/src/components/assets/travel5.png "country search that returns user 'pins' as well as google laces results")
